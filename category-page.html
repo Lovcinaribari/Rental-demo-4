@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rental Demo | Категория</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <a href="./index.html" class="logo">Rental Demo</a>
+
+      <nav class="main-nav">
+        <a href="./index.html">Начало</a>
+        <a href="./category-page.html">Категории</a>
+        <a href="./product-page.html">Продукт</a>
+        <a href="./checkout-page.html">Checkout</a>
+      </nav>
+
+      <a href="./checkout-page.html" class="btn btn-primary">Бърза резервация</a>
+    </div>
+  </header>
+
+  <main class="category-page">
+    <section class="category-hero">
+      <div class="container">
+        <p class="breadcrumb">Начало / Категории / Мини багери</p>
+        <span class="eyebrow">Категория</span>
+        <h1>Мини багери под наем</h1>
+        <p class="category-intro">
+          Компактни машини за изкопни дейности, дворни ремонти и строителни обекти в градска среда.
+        </p>
+      </div>
+    </section>
+
+    <section class="category-layout">
+      <div class="container category-layout-grid">
+        <aside class="filters-box">
+          <h3>Филтри</h3>
+
+          <div class="filter-group">
+            <p>Цена на ден</p>
+            <label><input type="checkbox"> До 80 лв.</label>
+            <label><input type="checkbox"> До 120 лв.</label>
+            <label><input type="checkbox"> Над 120 лв.</label>
+          </div>
+
+          <div class="filter-group">
+            <p>Рейтинг</p>
+            <label><input type="checkbox"> 4.0+</label>
+            <label><input type="checkbox"> 4.5+</label>
+            <label><input type="checkbox"> 4.8+</label>
+          </div>
+
+          <div class="filter-group">
+            <p>Наличност</p>
+            <label><input type="checkbox"> Налични сега</label>
+            <label><input type="checkbox"> Промо оферти</label>
+          </div>
+        </aside>
+
+        <div class="category-content">
+          <div class="category-toolbar">
+            <p>Показани 8 продукта</p>
+            <select>
+              <option>Подреди по популярност</option>
+              <option>Подреди по цена</option>
+              <option>Подреди по рейтинг</option>
+            </select>
+          </div>
+
+          <div class="category-products-grid">
+            <article class="catalog-card">
+              <a href="./product-page.html" class="catalog-image-wrap"><div class="catalog-image">Мини багер</div></a>
+              <h3>CAT 301.8</h3>
+              <div class="rating">★★★★★ <span>4.8</span></div>
+              <div class="price-box">
+                <span class="old-price">160 лв./ден</span>
+                <span class="new-price">129 лв./ден</span>
+              </div>
+            </article>
+
+            <article class="catalog-card">
+              <a href="./product-page.html" class="catalog-image-wrap"><div class="catalog-image">Bobcat</div></a>
+              <h3>Bobcat E19</h3>
+              <div class="rating">★★★★☆ <span>4.6</span></div>
+              <div class="price-box">
+                <span class="old-price">150 лв./ден</span>
+                <span class="new-price">119 лв./ден</span>
+              </div>
+            </article>
+
+            <article class="catalog-card">
+              <a href="./product-page.html" class="catalog-image-wrap"><div class="catalog-image">Kubota</div></a>
+              <h3>Kubota KX019-4</h3>
+              <div class="rating">★★★★★ <span>4.9</span></div>
+              <div class="price-box">
+                <span class="old-price">170 лв./ден</span>
+                <span class="new-price">139 лв./ден</span>
+              </div>
+            </article>
+
+            <article class="catalog-card">
+              <a href="./product-page.html" class="catalog-image-wrap"><div class="catalog-image">JCB</div></a>
+              <h3>JCB 8008 CTS</h3>
+              <div class="rating">★★★★☆ <span>4.5</span></div>
+              <div class="price-box">
+                <span class="old-price">145 лв./ден</span>
+                <span class="new-price">115 лв./ден</span>
+              </div>
+            </article>
+
+            <article class="catalog-card">
+              <a href="./product-page.html" class="catalog-image-wrap"><div class="catalog-image">Takeuchi</div></a>
+              <h3>Takeuchi TB216</h3>
+              <div class="rating">★★★★★ <span>4.8</span></div>
+              <div class="price-box">
+                <span class="old-price">165 лв./ден</span>
+                <span class="new-price">134 лв./ден</span>
+              </div>
+            </article>
+
+            <article class="catalog-card">
+              <a href="./product-page.html" class="catalog-image-wrap"><div class="catalog-image">Hitachi</div></a>
+              <h3>Hitachi ZX17U</h3>
+              <div class="rating">★★★★☆ <span>4.7</span></div>
+              <div class="price-box">
+                <span class="old-price">155 лв./ден</span>
+                <span class="new-price">124 лв./ден</span>
+              </div>
+            </article>
+
+            <article class="catalog-card">
+              <a href="./product-page.html" class="catalog-image-wrap"><div class="catalog-image">Yanmar</div></a>
+              <h3>Yanmar SV18</h3>
+              <div class="rating">★★★★☆ <span>4.6</span></div>
+              <div class="price-box">
+                <span class="old-price">148 лв./ден</span>
+                <span class="new-price">118 лв./ден</span>
+              </div>
+            </article>
+
+            <article class="catalog-card">
+              <a href="./product-page.html" class="catalog-image-wrap"><div class="catalog-image">Hyundai</div></a>
+              <h3>Hyundai R18-9A</h3>
+              <div class="rating">★★★★★ <span>4.8</span></div>
+              <div class="price-box">
+                <span class="old-price">162 лв./ден</span>
+                <span class="new-price">132 лв./ден</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>

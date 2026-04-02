@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rental Demo | Начало</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <a href="./index.html" class="logo">Rental Demo</a>
+
+      <nav class="main-nav">
+        <a href="./index.html">Начало</a>
+        <a href="./category-page.html">Категории</a>
+        <a href="./product-page.html">Продукт</a>
+        <a href="./checkout-page.html">Checkout</a>
+      </nav>
+
+      <a href="./category-page.html" class="btn btn-primary">Виж каталога</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="eyebrow">Машини и инструменти под наем</span>
+          <h1>Наем на строителна техника и малка механизация за всеки обект</h1>
+          <p>
+            Избери категория, провери наличност и резервирай машина за точната дата и час.
+            Демо дизайн за модерен rental сайт.
+          </p>
+
+          <div class="hero-actions">
+            <a href="./category-page.html" class="btn btn-primary">Разгледай машини</a>
+            <a href="./product-page.html" class="btn btn-secondary">Виж примерен продукт</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-badge">Популярен избор</div>
+          <h3>Мини багер CAT 301.8</h3>
+          <p>Компактен, удобен за градски обекти и дворни ремонти.</p>
+          <div class="hero-price">
+            <span class="old-price">160 лв./ден</span>
+            <span class="new-price">129 лв./ден</span>
+          </div>
+          <a href="./checkout-page.html" class="btn btn-dark">Резервирай</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="categories-preview">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Категории</span>
+          <h2>Най-търсени категории</h2>
+        </div>
+
+        <div class="category-grid">
+          <a href="./category-page.html" class="category-card">Мини багери</a>
+          <a href="./category-page.html" class="category-card">Виброплочи</a>
+          <a href="./category-page.html" class="category-card">Генератори</a>
+          <a href="./category-page.html" class="category-card">Къртачи</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured-products">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Препоръчани</span>
+          <h2>Популярни машини под наем</h2>
+        </div>
+
+        <div class="products-grid">
+          <article class="product-card">
+            <div class="product-thumb">Снимка</div>
+            <h3>Мини багер CAT 301.8</h3>
+            <div class="rating">★★★★★ <span>4.8</span></div>
+            <div class="price-box">
+              <span class="old-price">160 лв./ден</span>
+              <span class="new-price">129 лв./ден</span>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-thumb">Снимка</div>
+            <h3>Виброплоча Husqvarna</h3>
+            <div class="rating">★★★★☆ <span>4.6</span></div>
+            <div class="price-box">
+              <span class="old-price">80 лв./ден</span>
+              <span class="new-price">65 лв./ден</span>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-thumb">Снимка</div>
+            <h3>Къртач Bosch 16 kg</h3>
+            <div class="rating">★★★★★ <span>4.9</span></div>
+            <div class="price-box">
+              <span class="old-price">55 лв./ден</span>
+              <span class="new-price">45 лв./ден</span>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-thumb">Снимка</div>
+            <h3>Генератор Honda 6.5 kW</h3>
+            <div class="rating">★★★★☆ <span>4.7</span></div>
+            <div class="price-box">
+              <span class="old-price">95 лв./ден</span>
+              <span class="new-price">79 лв./ден</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>

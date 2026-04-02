@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rental Demo | Checkout</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <a href="./index.html" class="logo">Rental Demo</a>
+
+      <nav class="main-nav">
+        <a href="./index.html">Начало</a>
+        <a href="./category-page.html">Категории</a>
+        <a href="./product-page.html">Продукт</a>
+        <a href="./checkout-page.html">Checkout</a>
+      </nav>
+
+      <a href="./product-page.html" class="btn btn-secondary">Обратно към продукта</a>
+    </div>
+  </header>
+
+  <main class="checkout-page">
+    <section class="checkout-section">
+      <div class="container">
+        <p class="breadcrumb">Начало / Продукт / Checkout</p>
+
+        <div class="checkout-intro">
+          <span class="eyebrow">Резервация</span>
+          <h1>Завърши своята заявка</h1>
+          <p>
+            Това е demo checkout за наем на техника. Формата е само с дизайн,
+            без реално изпращане на данни.
+          </p>
+        </div>
+
+        <div class="checkout-layout">
+          <div class="checkout-form-box">
+            <h2>Данни за клиента</h2>
+
+            <form class="checkout-form">
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="fullName">Име и фамилия</label>
+                  <input type="text" id="fullName" placeholder="Въведи име и фамилия">
+                </div>
+
+                <div class="form-group">
+                  <label for="phone">Телефон</label>
+                  <input type="tel" id="phone" placeholder="Въведи телефон">
+                </div>
+
+                <div class="form-group">
+                  <label for="email">Имейл</label>
+                  <input type="email" id="email" placeholder="Въведи имейл">
+                </div>
+
+                <div class="form-group">
+                  <label for="company">Фирма</label>
+                  <input type="text" id="company" placeholder="По желание">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="address">Адрес</label>
+                <input type="text" id="address" placeholder="Въведи адрес за обекта или доставка">
+              </div>
+
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="date">Дата за резервация</label>
+                  <input type="date" id="date">
+                </div>
+
+                <div class="form-group">
+                  <label for="time">Час</label>
+                  <input type="time" id="time">
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="duration">Период на наем</label>
+                  <select id="duration">
+                    <option>1 ден</option>
+                    <option>2 дни</option>
+                    <option>3 дни</option>
+                    <option>1 седмица</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="pickup">Начин на получаване</label>
+                  <select id="pick
