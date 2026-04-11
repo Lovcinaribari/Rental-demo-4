@@ -13,196 +13,181 @@
   <header class="site-header">
     <div class="container header-row">
       <a href="./index.html" class="logo">Rental Demo</a>
-
       <nav class="main-nav">
         <a href="./index.html">Начало</a>
         <a href="./category-page.html">Категории</a>
         <a href="./product-page.html">Продукт</a>
         <a href="./checkout-page.html">Checkout</a>
       </nav>
-
-      <a href="#" class="btn btn-primary"> Вход / Регистрация </a>
+      <a href="#" class="btn btn-outline-primary">Вход / Регистрация</a>
     </div>
   </header>
-
+ 
   <main>
-    <section class="hero hero-home">
+ <!-- HERO -->
+<section class="hero hero-home">
   <div class="hero-overlay"></div>
 
   <div class="container hero-home-inner">
     <div class="hero-home-content">
-      <span class="eyebrow hero-home-eyebrow"></span>
-      <h1></h1>
+      <div class="hero-copy">
+        <span class="hero-eyebrow">Наем на техника</span>
+        <h1 class="hero-title">Точната техника за твоя обект</h1>
+        <p class="hero-description">
+          Мини багери, виброплочи, генератори и друга техника под наем
+          с бърза заявка, ясни условия и удобно обслужване.
+        </p>
+      </div>
 
-      <form class="hero-search-bar" action="#" role="search">
-        <div class="hero-search-item hero-search-item-wide">
+      <form class="hero-search-bar">
+        <div class="hero-search-item hero-search-item--wide">
           <label for="hero-location">Локация</label>
-          <input id="hero-location" type="text" placeholder="Избери обект или град" />
+          <input id="hero-location" type="text" placeholder="Избери обект или град">
         </div>
 
         <div class="hero-search-item">
           <label for="hero-start">Начална дата</label>
-          <input id="hero-start" type="date" />
+          <input id="hero-start" type="date">
         </div>
 
         <div class="hero-search-item">
           <label for="hero-end">Крайна дата</label>
-          <input id="hero-end" type="date" />
+          <input id="hero-end" type="date">
         </div>
 
-        <button type="submit" class="btn btn-primary hero-search-btn">
-          Разгледай
-        </button>
+        <button type="submit" class="hero-search-btn">Разгледай</button>
       </form>
     </div>
   </div>
 </section>
+<!-- END HERO -->
+
+    <!-- ✅ CATEGORIES — now correctly outside the hero -->
+  <<section class="categories-preview" id="categories">
+  <div class="container">
+    <div class="section-headings">
+  <span class="eyebrow">Машини под наем</span>
+  <h2>Основни категории</h2>
+  <p>Избери техника според вида работа — от изкопни машини и лека механизация до генератори и складово оборудване.</p>
+</div>
+
+    <div class="category-grid">
+      <article class="category-card rental-category-card" data-href="./category-earthmoving.html" tabindex="0" role="link" aria-label="Земекопна техника">
+        <div class="category-icon rental-category-icon">🚜</div>
+        <h3>Земекопна техника</h3>
+        <p>За изкопи, теренни работи и грубо строителство.</p>
+        <ul>
+          <li>Багери</li>
+          <li>Мини багери</li>
+          <li>Дъмпери</li>
+          <li>Валяци</li>
+        </ul>
+        <a href="./category-earthmoving.html" class="category-link">Разгледай категорията</a>
+      </article>
+
+      <article class="category-card rental-category-card" data-href="./category-light-equipment.html" tabindex="0" role="link" aria-label="Лека механизация">
+        <div class="category-icon rental-category-icon">🛠️</div>
+        <h3>Лека механизация</h3>
+        <p>Практични машини за рязане, къртене и уплътняване.</p>
+        <ul>
+          <li>Машини за рязане</li>
+          <li>Трамбовки</li>
+          <li>Къртачи</li>
+          <li>Перфоратори</li>
+        </ul>
+        <a href="./category-light-equipment.html" class="category-link">Разгледай категорията</a>
+      </article>
+
+      <article class="category-card rental-category-card" data-href="./category-generators.html" tabindex="0" role="link" aria-label="Генератори и компресори">
+        <div class="category-icon rental-category-icon">⚡</div>
+        <h3>Генератори и компресори</h3>
+        <p>Надеждно захранване и въздух за различни строителни задачи.</p>
+        <ul>
+          <li>Генератори</li>
+          <li>Дизелови генератори</li>
+          <li>Компресори</li>
+          <li>Въздушни компресори</li>
+        </ul>
+        <a href="./category-generators.html" class="category-link">Разгледай категорията</a>
+      </article>
+
+      <article class="category-card rental-category-card" data-href="./category-warehouse.html" tabindex="0" role="link" aria-label="Складова техника">
+        <div class="category-icon rental-category-icon">📦</div>
+        <h3>Складова техника</h3>
+        <p>Машини за товарене, преместване и вътрешна логистика.</p>
+        <ul>
+          <li>Мотокари</li>
+          <li>Електрокари</li>
+          <li>Палетни колички</li>
+          <li>Стакери</li>
+        </ul>
+        <a href="./category-warehouse.html" class="category-link">Разгледай категорията</a>
+      </article>
+    </div>
+  </div>
+</section>
 
 
-    <section class="categories-preview">
-  
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">Категории</span>
-    
-          <h2>Най-търсени категории</h2>
-          
+    <!-- ✅ END CATEGORIES -->
+
+    <section class="faq-section">
+      <div class="container faq-wrap">
+        <div class="faq-intro">
+          <span class="section-kicker">Често задавани въпроси</span>
+          <h2>Често задавани въпроси за наем на строителна техника</h2>
+          <p>
+            Събрахме най-често задаваните въпроси за наем на машини, срокове, доставка,
+            условия и организация на обекта, за да ти помогнем по-бързо да избереш
+            подходящата техника.
+          </p>
         </div>
-
-        <div class="category-grid">
-          <a href="./category-page.html" class="category-card">Мини багери</a>
-          <a href="./category-page.html" class="category-card">Виброплочи</a>
-          <a href="./category-page.html" class="category-card">Генератори</a>
-          <a href="./category-page.html" class="category-card">Къртачи</a>
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary>Какви машини мога да наема за малък или среден обект?</summary>
+            <div class="faq-answer">
+              <p>В зависимост от вида работа можеш да наемеш мини багери, виброплочи, генератори, къртачи и друга техника, подходяща за ремонтни, дворни, инфраструктурни и строителни дейности.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Мога ли да наема техника за кратък период?</summary>
+            <div class="faq-answer">
+              <p>Да, предлагаме възможност за краткосрочен и дългосрочен наем според нуждите на конкретния обект и периода, за който е необходима машината.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Предлагате ли доставка до обекта?</summary>
+            <div class="faq-answer">
+              <p>При възможност може да се организира доставка или вземане на техниката според локацията, вида машина и конкретния график на обекта.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Как да избера подходящата машина за моя проект?</summary>
+            <div class="faq-answer">
+              <p>Ако не си сигурен кой модел е най-подходящ, можеш да се ориентираш по вида работа, терена, срока и натоварването, а ние можем да помогнем с насока при избора.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Какво се случва, ако ми трябва техниката за по-дълго?</summary>
+            <div class="faq-answer">
+              <p>При нужда от удължаване е добре да се направи предварителна заявка, за да се потвърди наличността и да се организира продължаване на периода на наем.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Работите ли с частни клиенти и фирми?</summary>
+            <div class="faq-answer">
+              <p>Да, услугата е подходяща както за частни клиенти и малки ремонти, така и за строителни фирми, бригади и професионални изпълнители.</p>
+            </div>
+          </details>
         </div>
       </div>
     </section>
-    
-    <section class="seo-section">
-  <div class="container seo-grid">
-    <div class="seo-copy">
-      <span class="section-kicker">Наем на техника</span>
-      <h2>Наем на строителна техника и малка механизация за различни видове обекти</h2>
-
-      <p>
-        Предлагаме наем на строителна техника и малка механизация за жилищни, ремонтни,
-        инфраструктурни и професионални строителни обекти. При нас можеш да откриеш
-        машини под наем като мини багери, виброплочи, генератори, къртачи и друга техника,
-        подходяща както за краткосрочни, така и за по-дълги проекти.
-      </p>
-
-      <p>
-        Работим с частни клиенти, строителни фирми и изпълнители, които търсят надеждна
-        техника, бърза организация и яснота по условията за наем. Нашата цел е да улесним
-        избора на подходяща машина според обекта, срока и начина на работа, като предложим
-        гъвкави решения, консултация и удобен процес по заявка, получаване и връщане.
-      </p>
-    </div>
-
-    <div class="seo-points">
-      <div class="seo-card">
-        <h3>Подходяща техника за всеки етап</h3>
-        <p>Оборудване за изкопни работи, уплътняване, електрозахранване, къртене и довършителни дейности.</p>
-      </div>
-
-      <div class="seo-card">
-        <h3>Гъвкави срокове за наем</h3>
-        <p>Възможност за краткосрочен и дългосрочен наем според нуждите на конкретния обект.</p>
-      </div>
-
-      <div class="seo-card">
-        <h3>Локално обслужване</h3>
-        <p>Удобно обслужване за клиенти от региона с възможност за организация на доставка или вземане.</p>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="faq-section">
-  <div class="container faq-wrap">
-    <div class="faq-intro">
-      <span class="section-kicker">Често задавани въпроси</span>
-      <h2>Често задавани въпроси за наем на строителна техника</h2>
-      <p>
-        Събрахме най-често задаваните въпроси за наем на машини, срокове, доставка,
-        условия и организация на обекта, за да ти помогнем по-бързо да избереш
-        подходящата техника.
-      </p>
-    </div>
-
-    <div class="faq-list">
-      <details class="faq-item" open>
-        <summary>Какви машини мога да наема за малък или среден обект?</summary>
-        <div class="faq-answer">
-          <p>
-            В зависимост от вида работа можеш да наемеш мини багери, виброплочи,
-            генератори, къртачи и друга техника, подходяща за ремонтни, дворни,
-            инфраструктурни и строителни дейности.
-          </p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>Мога ли да наема техника за кратък период?</summary>
-        <div class="faq-answer">
-          <p>
-            Да, предлагаме възможност за краткосрочен и дългосрочен наем според
-            нуждите на конкретния обект и периода, за който е необходима машината.
-          </p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>Предлагате ли доставка до обекта?</summary>
-        <div class="faq-answer">
-          <p>
-            При възможност може да се организира доставка или вземане на техниката
-            според локацията, вида машина и конкретния график на обекта.
-          </p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>Как да избера подходящата машина за моя проект?</summary>
-        <div class="faq-answer">
-          <p>
-            Ако не си сигурен кой модел е най-подходящ, можеш да се ориентираш по
-            вида работа, терена, срока и натоварването, а ние можем да помогнем с
-            насока при избора.
-          </p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>Какво се случва, ако ми трябва техниката за по-дълго?</summary>
-        <div class="faq-answer">
-          <p>
-            При нужда от удължаване е добре да се направи предварителна заявка, за да
-            се потвърди наличността и да се организира продължаване на периода на наем.
-          </p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>Работите ли с частни клиенти и фирми?</summary>
-        <div class="faq-answer">
-          <p>
-            Да, услугата е подходяща както за частни клиенти и малки ремонти, така и
-            за строителни фирми, бригади и професионални изпълнители.
-          </p>
-        </div>
-      </details>
-    </div>
-  </div>
-</section>
-
-
+ 
     <section class="featured-products">
       <div class="container">
         <div class="section-heading">
           <span class="eyebrow">Препоръчани</span>
           <h2>Популярни машини под наем</h2>
         </div>
-
         <div class="products-grid">
           <article class="product-card">
             <div class="product-thumb">Снимка</div>
@@ -213,7 +198,6 @@
               <span class="new-price">129 лв./ден</span>
             </div>
           </article>
-
           <article class="product-card">
             <div class="product-thumb">Снимка</div>
             <h3>Виброплоча Husqvarna</h3>
@@ -223,7 +207,6 @@
               <span class="new-price">65 лв./ден</span>
             </div>
           </article>
-
           <article class="product-card">
             <div class="product-thumb">Снимка</div>
             <h3>Къртач Bosch 16 kg</h3>
@@ -233,7 +216,6 @@
               <span class="new-price">45 лв./ден</span>
             </div>
           </article>
-
           <article class="product-card">
             <div class="product-thumb">Снимка</div>
             <h3>Генератор Honda 6.5 kW</h3>
@@ -246,59 +228,69 @@
         </div>
       </div>
     </section>
+ 
   </main>
-<footer class="site-footer">
-  <div class="container footer-grid">
-    <div class="footer-brand">
-      <div class="footer-logo">Rental Demo</div>
-      <p>
-        Наем на строителна техника и малка механизация за жилищни, ремонтни,
-        инфраструктурни и професионални обекти.
-      </p>
-      <a href="./category-page.html" class="footer-cta">Разгледай машините</a>
+ 
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">Rental Demo</div>
+        <p>Наем на строителна техника и малка механизация за жилищни, ремонтни, инфраструктурни и професионални обекти.</p>
+        <a href="./category-page.html" class="footer-cta">Разгледай машините</a>
+      </div>
+      <div class="footer-column">
+        <h3>Навигация</h3>
+        <ul>
+          <li><a href="./index.html">Начало</a></li>
+          <li><a href="./category-page.html">Категории</a></li>
+          <li><a href="./product-page.html">Продукт</a></li>
+          <li><a href="./checkout-page.html">Checkout</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Категории</h3>
+        <ul>
+          <li><a href="./category-page.html">Мини багери</a></li>
+          <li><a href="./category-page.html">Виброплочи</a></li>
+          <li><a href="./category-page.html">Генератори</a></li>
+          <li><a href="./category-page.html">Къртачи</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Контакти</h3>
+        <ul class="footer-contact-list">
+          <li>Телефон: <a href="tel:+359888000000">+359 888 000 000</a></li>
+          <li>Имейл: <a href="mailto:info@rentaldemo.bg">info@rentaldemo.bg</a></li>
+          <li>Локация: Бяла Слатина, България</li>
+          <li>Работно време: Пон - Пет, 08:00 - 18:00</li>
+        </ul>
+      </div>
     </div>
-
-    <div class="footer-column">
-      <h3>Навигация</h3>
-      <ul>
-        <li><a href="./index.html">Начало</a></li>
-        <li><a href="./category-page.html">Категории</a></li>
-        <li><a href="./product-page.html">Продукт</a></li>
-        <li><a href="./checkout-page.html">Checkout</a></li>
-      </ul>
+    <div class="container footer-bottom">
+      <p>© 2026 Rental Demo. Всички права запазени.</p>
+      <div class="footer-legal">
+        <a href="#">Политика за поверителност</a>
+        <a href="#">Условия за ползване</a>
+        <a href="#">Бисквитки</a>
+      </div>
     </div>
+  </footer>
+ 
+  <script>
+  document.querySelectorAll('.rental-category-card[data-href]').forEach((card) => {
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('a, button')) return;
+      window.location.href = card.dataset.href;
+    });
 
-    <div class="footer-column">
-      <h3>Категории</h3>
-      <ul>
-        <li><a href="./category-page.html">Мини багери</a></li>
-        <li><a href="./category-page.html">Виброплочи</a></li>
-        <li><a href="./category-page.html">Генератори</a></li>
-        <li><a href="./category-page.html">Къртачи</a></li>
-      </ul>
-    </div>
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        window.location.href = card.dataset.href;
+      }
+    });
+  });
+</script>
 
-    <div class="footer-column">
-      <h3>Контакти</h3>
-      <ul class="footer-contact-list">
-        <li>Телефон: <a href="tel:+359888000000">+359 888 000 000</a></li>
-        <li>Имейл: <a href="mailto:info@rentaldemo.bg">info@rentaldemo.bg</a></li>
-        <li>Локация: Бяла Слатина, България</li>
-        <li>Работно време: Пон - Пет, 08:00 - 18:00</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="container footer-bottom">
-    <p>© 2026 Rental Demo. Всички права запазени.</p>
-    <div class="footer-legal">
-      <a href="#">Политика за поверителност</a>
-      <a href="#">Условия за ползване</a>
-      <a href="#">Бисквитки</a>
-    </div>
-  </div>
-</footer>
-
-  <script src="./script.js"></script>
 </body>
 </html>

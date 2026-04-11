@@ -4,161 +4,211 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rental Demo | Категория</title>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
+
   <header class="site-header">
     <div class="container header-row">
       <a href="./index.html" class="logo">Rental Demo</a>
-
       <nav class="main-nav">
         <a href="./index.html">Начало</a>
         <a href="./category-page.html">Категории</a>
         <a href="./product-page.html">Продукт</a>
         <a href="./checkout-page.html">Checkout</a>
       </nav>
-
       <a href="./checkout-page.html" class="btn btn-primary">Бърза резервация</a>
     </div>
   </header>
 
-  <main class="category-page">
-    <section class="category-hero">
-      <div class="container">
-        <p class="breadcrumb">Начало / Категории / Мини багери</p>
-        <span class="eyebrow">Категория</span>
-        <h1>Мини багери под наем</h1>
-        <p class="category-intro">
-          Компактни машини за изкопни дейности, дворни ремонти и строителни обекти в градска среда.
-        </p>
-      </div>
-    </section>
+  <main>
 
-    <section class="category-layout">
-      <div class="container category-layout-grid">
-        <aside class="filters-box">
-          <h3>Филтри</h3>
+    <!-- HERO НА КАТЕГОРИЯТА -->
+ <!-- ЗАГЛАВИЕ НА КАТЕГОРИЯТА -->
+<div class="container category-title-bar">
+  <div class="breadcrumb">
+    <a href="./index.html">Начало</a> /
+    <a href="#">Машини под наем</a> /
+    <span>Лека механизация</span>
+  </div>
+  <h1>Лека механизация</h1>
+</div>
 
-          <div class="filter-group">
-            <p>Цена на ден</p>
-            <label><input type="checkbox"> До 80 лв.</label>
-            <label><input type="checkbox"> До 120 лв.</label>
-            <label><input type="checkbox"> Над 120 лв.</label>
-          </div>
-
-          <div class="filter-group">
-            <p>Рейтинг</p>
-            <label><input type="checkbox"> 4.0+</label>
-            <label><input type="checkbox"> 4.5+</label>
-            <label><input type="checkbox"> 4.8+</label>
-          </div>
-
-          <div class="filter-group">
-            <p>Наличност</p>
-            <label><input type="checkbox"> Налични сега</label>
-            <label><input type="checkbox"> Промо оферти</label>
-          </div>
-        </aside>
-
-        <div class="category-content">
-          <div class="category-toolbar">
-            <p>Показани 8 продукта</p>
-            <select>
-              <option>Подреди по популярност</option>
-              <option>Подреди по цена</option>
-              <option>Подреди по рейтинг</option>
-            </select>
-          </div>
-
-          <div class="category-products-grid">
-            <article class="catalog-card">
-              <a href="./product-page.html" class="catalog-image-wrap"><div class="catalog-image">Мини багер</div></a>
-              <h3>CAT 301.8</h3>
-              <div class="rating">★★★★★ <span>4.8</span></div>
-              <div class="price-box">
-                <span class="old-price">160 лв./ден</span>
-                <span class="new-price">129 лв./ден</span>
-              </div>
-            </article>
-
-            <article class="catalog-card">
-              <a href="./product-page.html" class="catalog-image-wrap"><div class="catalog-image">Bobcat</div></a>
-              <h3>Bobcat E19</h3>
-              <div class="rating">★★★★☆ <span>4.6</span></div>
-              <div class="price-box">
-                <span class="old-price">150 лв./ден</span>
-                <span class="new-price">119 лв./ден</span>
-              </div>
-            </article>
-
-            <article class="catalog-card">
-              <a href="./product-page.html" class="catalog-image-wrap"><div class="catalog-image">Kubota</div></a>
-              <h3>Kubota KX019-4</h3>
-              <div class="rating">★★★★★ <span>4.9</span></div>
-              <div class="price-box">
-                <span class="old-price">170 лв./ден</span>
-                <span class="new-price">139 лв./ден</span>
-              </div>
-            </article>
-
-            <article class="catalog-card">
-              <a href="./product-page.html" class="catalog-image-wrap"><div class="catalog-image">JCB</div></a>
-              <h3>JCB 8008 CTS</h3>
-              <div class="rating">★★★★☆ <span>4.5</span></div>
-              <div class="price-box">
-                <span class="old-price">145 лв./ден</span>
-                <span class="new-price">115 лв./ден</span>
-              </div>
-            </article>
-
-            <article class="catalog-card">
-              <a href="./product-page.html" class="catalog-image-wrap"><div class="catalog-image">Takeuchi</div></a>
-              <h3>Takeuchi TB216</h3>
-              <div class="rating">★★★★★ <span>4.8</span></div>
-              <div class="price-box">
-                <span class="old-price">165 лв./ден</span>
-                <span class="new-price">134 лв./ден</span>
-              </div>
-            </article>
-
-            <article class="catalog-card">
-              <a href="./product-page.html" class="catalog-image-wrap"><div class="catalog-image">Hitachi</div></a>
-              <h3>Hitachi ZX17U</h3>
-              <div class="rating">★★★★☆ <span>4.7</span></div>
-              <div class="price-box">
-                <span class="old-price">155 лв./ден</span>
-                <span class="new-price">124 лв./ден</span>
-              </div>
-            </article>
-
-            <article class="catalog-card">
-              <a href="./product-page.html" class="catalog-image-wrap"><div class="catalog-image">Yanmar</div></a>
-              <h3>Yanmar SV18</h3>
-              <div class="rating">★★★★☆ <span>4.6</span></div>
-              <div class="price-box">
-                <span class="old-price">148 лв./ден</span>
-                <span class="new-price">118 лв./ден</span>
-              </div>
-            </article>
-
-            <article class="catalog-card">
-              <a href="./product-page.html" class="catalog-image-wrap"><div class="catalog-image">Hyundai</div></a>
-              <h3>Hyundai R18-9A</h3>
-              <div class="rating">★★★★★ <span>4.8</span></div>
-              <div class="price-box">
-                <span class="old-price">162 лв./ден</span>
-                <span class="new-price">132 лв./ден</span>
-              </div>
-            </article>
-          </div>
+    <!-- ФИЛТРИ — хоризонтално -->
+    <section class="category-filters-bar">
+      <div class="container category-filters-inner">
+        <div class="filter-tags">
+          <button class="filter-tag active">Всички</button>
+          <button class="filter-tag">Рязане</button>
+          <button class="filter-tag">Трамбоване</button>
+          <button class="filter-tag">Къртене</button>
+        </div>
+        <div class="category-toolbar-right">
+          <span class="results-count">12 машини</span>
+          <select>
+            <option>Най-търсени</option>
+            <option>Цена: ниска към висока</option>
+            <option>Цена: висока към ниска</option>
+            <option>Най-нови</option>
+          </select>
         </div>
       </div>
     </section>
+
+    <!-- ПРОДУКТОВА РЕШЕТКА -->
+    <section class="category-layout">
+      <div class="container">
+        <div class="category-products-grid">
+
+          <article class="catalog-card">
+            <div class="catalog-image">Снимка</div>
+            <div class="catalog-info">
+              <span class="catalog-tag">Рязане</span>
+              <h3>Фугорез под наем</h3>
+              <p>Подходящ за асфалт, бетон и външни строителни дейности.</p>
+              <div class="catalog-footer">
+                <div class="catalog-price">от <strong>45 лв.</strong>/ден</div>
+                <div class="catalog-actions">
+                  <a href="./product-page.html" class="btn btn-secondary catalog-btn">Виж повече</a>
+                  <a href="#" class="btn btn-primary catalog-btn">Запитване</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="catalog-card">
+            <div class="catalog-image">Снимка</div>
+            <div class="catalog-info">
+              <span class="catalog-tag">Трамбоване</span>
+              <h3>Виброплоча под наем</h3>
+              <p>За уплътняване на пясък, чакъл и основи преди настилка.</p>
+              <div class="catalog-footer">
+                <div class="catalog-price">от <strong>38 лв.</strong>/ден</div>
+                <div class="catalog-actions">
+                  <a href="./product-page.html" class="btn btn-secondary catalog-btn">Виж повече</a>
+                  <a href="#" class="btn btn-primary catalog-btn">Запитване</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="catalog-card">
+            <div class="catalog-image">Снимка</div>
+            <div class="catalog-info">
+              <span class="catalog-tag">Къртене</span>
+              <h3>Къртач под наем</h3>
+              <p>Подходящ за бетон, замазка, плочи и по-тежки ремонти.</p>
+              <div class="catalog-footer">
+                <div class="catalog-price">от <strong>25 лв.</strong>/ден</div>
+                <div class="catalog-actions">
+                  <a href="./product-page.html" class="btn btn-secondary catalog-btn">Виж повече</a>
+                  <a href="#" class="btn btn-primary catalog-btn">Запитване</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="catalog-card">
+            <div class="catalog-image">Снимка</div>
+            <div class="catalog-info">
+              <span class="catalog-tag">Къртене</span>
+              <h3>Перфоратор под наем</h3>
+              <p>За пробиване и леки къртачни дейности на обекта.</p>
+              <div class="catalog-footer">
+                <div class="catalog-price">от <strong>18 лв.</strong>/ден</div>
+                <div class="catalog-actions">
+                  <a href="./product-page.html" class="btn btn-secondary catalog-btn">Виж повече</a>
+                  <a href="#" class="btn btn-primary catalog-btn">Запитване</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="catalog-card">
+            <div class="catalog-image">Снимка</div>
+            <div class="catalog-info">
+              <span class="catalog-tag">Рязане</span>
+              <h3>Машина за плочки под наем</h3>
+              <p>Добро решение за плочки, гранитогрес и довършителни работи.</p>
+              <div class="catalog-footer">
+                <div class="catalog-price">от <strong>22 лв.</strong>/ден</div>
+                <div class="catalog-actions">
+                  <a href="./product-page.html" class="btn btn-secondary catalog-btn">Виж повече</a>
+                  <a href="#" class="btn btn-primary catalog-btn">Запитване</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="catalog-card">
+            <div class="catalog-image">Снимка</div>
+            <div class="catalog-info">
+              <span class="catalog-tag">Трамбоване</span>
+              <h3>Трамбовка под наем</h3>
+              <p>Компактна машина за тесни участъци и труднодостъпни места.</p>
+              <div class="catalog-footer">
+                <div class="catalog-price">от <strong>34 лв.</strong>/ден</div>
+                <div class="catalog-actions">
+                  <a href="./product-page.html" class="btn btn-secondary catalog-btn">Виж повече</a>
+                  <a href="#" class="btn btn-primary catalog-btn">Запитване</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
   </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">Rental Demo</div>
+        <p>Наем на строителна техника и малка механизация за жилищни, ремонтни, инфраструктурни и професионални обекти.</p>
+        <a href="./category-page.html" class="footer-cta">Разгледай машините</a>
+      </div>
+      <div class="footer-column">
+        <h3>Навигация</h3>
+        <ul>
+          <li><a href="./index.html">Начало</a></li>
+          <li><a href="./category-page.html">Категории</a></li>
+          <li><a href="./product-page.html">Продукт</a></li>
+          <li><a href="./checkout-page.html">Checkout</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Категории</h3>
+        <ul>
+          <li><a href="./category-page.html">Мини багери</a></li>
+          <li><a href="./category-page.html">Виброплочи</a></li>
+          <li><a href="./category-page.html">Генератори</a></li>
+          <li><a href="./category-page.html">Къртачи</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Контакти</h3>
+        <ul>
+          <li>Телефон: <a href="tel:+359888000000">+359 888 000 000</a></li>
+          <li>Имейл: <a href="mailto:info@rentaldemo.bg">info@rentaldemo.bg</a></li>
+          <li>Локация: Бяла Слатина, България</li>
+          <li>Работно време: Пон - Пет, 08:00 - 18:00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© 2026 Rental Demo. Всички права запазени.</p>
+      <div class="footer-legal">
+        <a href="#">Политика за поверителност</a>
+        <a href="#">Условия за ползване</a>
+        <a href="#">Бисквитки</a>
+      </div>
+    </div>
+  </footer>
 
   <script src="./script.js"></script>
 </body>
