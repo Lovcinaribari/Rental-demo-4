@@ -10,30 +10,31 @@
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
+
   <header class="site-header">
     <div class="container header-row">
       <a href="./index.html" class="logo">Rental Demo</a>
-
       <nav class="main-nav">
         <a href="./index.html">Начало</a>
         <a href="./category-page.html">Категории</a>
         <a href="./product-page.html">Продукт</a>
         <a href="./checkout-page.html">Checkout</a>
       </nav>
-
       <a href="./checkout-page.html" class="btn btn-primary">Резервирай</a>
     </div>
   </header>
 
   <main class="product-page">
+
+    <!-- ПРОДУКТ -->
     <section class="product-section">
       <div class="container">
         <p class="breadcrumb">Начало / Категории / Мини багери / CAT 301.8</p>
 
         <div class="product-layout">
+
           <div class="product-gallery-box">
             <div class="product-main-image">Основна снимка на продукта</div>
-
             <div class="product-thumbs">
               <div class="product-thumb-small">Снимка 1</div>
               <div class="product-thumb-small">Снимка 2</div>
@@ -52,16 +53,19 @@
               <span class="new-price">129 лв./ден</span>
             </div>
 
-            <p class="availability">Налични 3 броя</p>
+            <p class="availability">
+              <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#16a34a;margin-right:6px;vertical-align:middle;"></span>
+              Налични 3 броя
+            </p>
 
             <p class="product-short-description">
-              Компактен мини багер, подходящ за тесни пространства, дворни ремонти, изкопни дейности
-              и малки строителни обекти.
+              Компактен мини багер, подходящ за тесни пространства, дворни ремонти,
+              изкопни дейности и малки строителни обекти.
             </p>
 
             <div class="product-actions">
               <a href="./checkout-page.html" class="btn btn-primary">Резервирай</a>
-              <a href="./category-page.html" class="btn btn-secondary">Назад към категория</a>
+              <a href="./category-page.html" class="btn btn-outline-primary">← Назад</a>
             </div>
 
             <div class="product-highlights">
@@ -83,10 +87,12 @@
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>
 
+    <!-- ДЕТАЙЛИ -->
     <section class="product-details-section">
       <div class="container">
         <div class="details-grid">
@@ -97,7 +103,6 @@
               където се търси надеждна и компактна техника с добра маневреност.
             </p>
           </div>
-
           <div class="details-card">
             <h2>Технически характеристики</h2>
             <ul class="spec-list">
@@ -107,25 +112,77 @@
               <li>Гориво: Дизел</li>
             </ul>
           </div>
-
           <div class="details-card">
             <h2>Условия за наем</h2>
             <p>
-              Наемът се заявява с предварителна резервация. Възможни са дневен, уикенд
-              и седмичен период. Показаната страница е demo дизайн без реална функционалност.
+              Наемът се заявява с предварителна резервация. Възможни са дневен,
+              уикенд и седмичен период на наем според нуждите на обекта.
             </p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- FAQ -->
+    <section class="product-faq-section">
+      <div class="container product-faq-wrap">
+
+        <div class="product-faq-intro">
+          <span class="section-kicker">Въпроси и отговори</span>
+          <h2>Често задавани въпроси за този продукт</h2>
+          <p>Всичко което трябва да знаеш преди да резервираш мини багер под наем.</p>
+          <a href="./checkout-page.html" class="btn btn-primary" style="margin-top:24px;display:inline-flex;">
+            Резервирай сега
+          </a>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary>Нужен ли е опит за управление на мини багер?</summary>
+            <div class="faq-answer">
+              <p>Мини багерите са сравнително лесни за управление, но препоръчваме основно обучение или опит с тежка техника. При нужда можем да организираме кратък инструктаж преди предаването на машината.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Какво е включено в цената на наема?</summary>
+            <div class="faq-answer">
+              <p>В цената е включена машината с пълен резервоар гориво, стандартна кофа и застраховка. Доставката и допълнителните приставки се договарят отделно.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Как се доставя машината до обекта?</summary>
+            <div class="faq-answer">
+              <p>Предлагаме доставка с платформен камион до посочен от теб адрес. Можеш също да вземеш машината директно от нашата база. Доставката се организира при резервацията.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Мога ли да удължа периода на наем?</summary>
+            <div class="faq-answer">
+              <p>Да, при наличност е възможно удължаване. Препоръчваме да се свържеш с нас поне ден преди изтичането на наема за да потвърдим наличността и условията.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Какво се случва при повреда на машината?</summary>
+            <div class="faq-answer">
+              <p>При техническа повреда по вина на производствен дефект — покриваме ремонта. При повреда по вина на оператора условията се уточняват при подписване на договора за наем.</p>
+            </div>
+          </details>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ПОДОБНИ МАШИНИ -->
     <section class="related-products">
       <div class="container">
         <div class="section-heading">
           <span class="eyebrow">Свързани продукти</span>
           <h2>Подобни машини</h2>
         </div>
-
         <div class="products-grid">
           <article class="product-card">
             <div class="product-thumb">Снимка</div>
@@ -136,7 +193,6 @@
               <span class="new-price">119 лв./ден</span>
             </div>
           </article>
-
           <article class="product-card">
             <div class="product-thumb">Снимка</div>
             <h3>Kubota KX019-4</h3>
@@ -146,7 +202,6 @@
               <span class="new-price">139 лв./ден</span>
             </div>
           </article>
-
           <article class="product-card">
             <div class="product-thumb">Снимка</div>
             <h3>JCB 8008 CTS</h3>
@@ -156,7 +211,6 @@
               <span class="new-price">115 лв./ден</span>
             </div>
           </article>
-
           <article class="product-card">
             <div class="product-thumb">Снимка</div>
             <h3>Takeuchi TB216</h3>
@@ -170,7 +224,69 @@
       </div>
     </section>
 
-    <script src="./script.js"></script>
+    <!-- ФИНАЛЕН CTA -->
+    <section class="product-cta-section">
+      <div class="container">
+        <div class="product-cta-box">
+          <div>
+            <h2>Готов за резервация?</h2>
+            <p>Свържи се с нас или попълни заявка онлайн — потвърждение до 2 часа.</p>
+          </div>
+          <div class="product-cta-actions">
+            <a href="./checkout-page.html" class="btn btn-primary">Резервирай сега</a>
+            <a href="tel:+359888000000" class="btn btn-secondary">📞 Обади се</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">Rental Demo</div>
+        <p>Наем на строителна техника и малка механизация за жилищни, ремонтни, инфраструктурни и професионални обекти.</p>
+        <a href="./category-page.html" class="footer-cta">Разгледай машините</a>
+      </div>
+      <div class="footer-column">
+        <h3>Навигация</h3>
+        <ul>
+          <li><a href="./index.html">Начало</a></li>
+          <li><a href="./category-page.html">Категории</a></li>
+          <li><a href="./product-page.html">Продукт</a></li>
+          <li><a href="./checkout-page.html">Checkout</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Категории</h3>
+        <ul>
+          <li><a href="./category-page.html">Мини багери</a></li>
+          <li><a href="./category-page.html">Виброплочи</a></li>
+          <li><a href="./category-page.html">Генератори</a></li>
+          <li><a href="./category-page.html">Къртачи</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Контакти</h3>
+        <ul>
+          <li>Телефон: <a href="tel:+359888000000">+359 888 000 000</a></li>
+          <li>Имейл: <a href="mailto:info@rentaldemo.bg">info@rentaldemo.bg</a></li>
+          <li>Локация: Бяла Слатина, България</li>
+          <li>Работно време: Пон - Пет, 08:00 - 18:00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© 2026 Rental Demo. Всички права запазени.</p>
+      <div class="footer-legal">
+        <a href="#">Политика за поверителност</a>
+        <a href="#">Условия за ползване</a>
+        <a href="#">Бисквитки</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
 </body>
 </html>

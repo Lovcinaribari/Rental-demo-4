@@ -4,464 +4,263 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Земекопна техника | Rental Demo</title>
-  <style>
-    :root {
-      --primary: #f59e0b;
-      --primary-dark: #d97706;
-      --dark: #111827;
-      --text: #1f2937;
-      --muted: #6b7280;
-      --bg: #f3f4f6;
-      --white: #ffffff;
-      --border: #e5e7eb;
-      --radius: 16px;
-      --shadow: 0 10px 30px rgba(17, 24, 39, 0.08);
-      --container: 1200px;
-      --transition: 0.3s ease;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Inter, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    .container {
-      width: min(100% - 32px, var(--container));
-      margin: 0 auto;
-    }
-
-    .site-header {
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .header-row {
-      min-height: 78px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .logo {
-      font-size: 1.2rem;
-      font-weight: 800;
-      color: var(--dark);
-    }
-
-    .main-nav {
-      display: flex;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
-
-    .main-nav a {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--muted);
-      transition: var(--transition);
-    }
-
-    .main-nav a:hover,
-    .main-nav a.active {
-      color: var(--dark);
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 46px;
-      padding: 0 20px;
-      border-radius: 999px;
-      font-weight: 700;
-      transition: var(--transition);
-    }
-
-    .btn-primary {
-      background: var(--primary);
-      color: var(--dark);
-    }
-
-    .btn-primary:hover {
-      background: var(--primary-dark);
-      transform: translateY(-2px);
-    }
-
-    .category-page {
-      padding: 48px 0 72px;
-    }
-
-    .breadcrumb {
-      color: var(--muted);
-      font-size: 0.92rem;
-      margin-bottom: 14px;
-    }
-
-    .category-intro h1 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      color: var(--dark);
-      margin-bottom: 12px;
-    }
-
-    .category-intro p {
-      color: var(--muted);
-      max-width: 65ch;
-    }
-
-    .category-layout {
-      padding-top: 28px;
-    }
-
-    .category-layout-grid {
-      display: grid;
-      grid-template-columns: 280px 1fr;
-      gap: 28px;
-      align-items: start;
-    }
-
-    .filters-box,
-    .catalog-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      box-shadow: var(--shadow);
-    }
-
-    .filters-box {
-      padding: 24px;
-      position: sticky;
-      top: 100px;
-    }
-
-    .filters-box h3 {
-      margin-bottom: 18px;
-      color: var(--dark);
-    }
-
-    .filter-group + .filter-group {
-      padding-top: 18px;
-      margin-top: 18px;
-      border-top: 1px solid var(--border);
-    }
-
-    .filter-group p {
-      font-weight: 700;
-      margin-bottom: 10px;
-      color: var(--dark);
-    }
-
-    .filter-group label {
-      display: block;
-      margin-bottom: 10px;
-      color: var(--muted);
-    }
-
-    .catalog-topbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 22px;
-      flex-wrap: wrap;
-    }
-
-    .catalog-topbar p {
-      color: var(--muted);
-      font-weight: 600;
-    }
-
-    .catalog-topbar select {
-      min-height: 46px;
-      padding: 0 16px;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      background: var(--white);
-    }
-
-    .catalog-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .catalog-card {
-      padding: 18px;
-      transition: var(--transition);
-    }
-
-    .catalog-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .catalog-image-wrap {
-      overflow: hidden;
-      border-radius: 14px;
-      margin-bottom: 16px;
-      background: linear-gradient(135deg, #e5e7eb, #d1d5db);
-    }
-
-    .catalog-image {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      transition: transform 0.4s ease;
-      display: block;
-    }
-
-    .catalog-card:hover .catalog-image {
-      transform: scale(1.06);
-    }
-
-    .catalog-card h3 {
-      font-size: 1.05rem;
-      color: var(--dark);
-      margin-bottom: 8px;
-    }
-
-    .catalog-card p {
-      color: var(--muted);
-      margin-bottom: 14px;
-      font-size: 0.96rem;
-    }
-
-    .price-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      margin-top: 12px;
-    }
-
-    .price {
-      font-weight: 800;
-      color: var(--dark);
-    }
-
-    .tag {
-      display: inline-block;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: #fef3c7;
-      color: #92400e;
-      font-size: 0.8rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-
-    .site-footer {
-      background: var(--dark);
-      color: #d1d5db;
-      padding: 48px 0 24px;
-      margin-top: 40px;
-    }
-
-    .site-footer a {
-      color: #f9fafb;
-    }
-
-    @media (max-width: 992px) {
-      .category-layout-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .filters-box {
-        position: static;
-      }
-
-      .catalog-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 640px) {
-      .header-row {
-        flex-direction: column;
-        justify-content: center;
-        padding: 16px 0;
-      }
-
-      .main-nav {
-        justify-content: center;
-      }
-
-      .catalog-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
 
   <header class="site-header">
     <div class="container header-row">
       <a href="./index.html" class="logo">Rental Demo</a>
-
       <nav class="main-nav">
         <a href="./index.html">Начало</a>
-        <a href="./index.html#categories" class="active">Категории</a>
-        <a href="./index.html#featured">Продукти</a>
-        <a href="./index.html#contact">Контакти</a>
-      </nav>
-
-      <a href="./index.html#contact" class="btn btn-primary">Запитване</a>
-    </div>
-  </header>
-
-  <main class="category-page">
-    <div class="container">
-      <div class="breadcrumb">
-        <a href="./index.html">Начало</a> / Категории / Земекопна техника
-      </div>
-
-      <section class="category-intro">
-        <h1>Земекопна техника</h1>
-        <p>Избери машини за изкопни дейности, подготовка на терен, транспорт на материали и уплътняване на строителната площадка.</p>
-      </section>
-
-      <section class="category-layout">
-        <div class="category-layout-grid">
-          <aside class="filters-box">
-            <h3>Филтри</h3>
-
-            <div class="filter-group">
-              <p>Тип машина</p>
-              <label><input type="checkbox"> Багери</label>
-              <label><input type="checkbox"> Мини багери</label>
-              <label><input type="checkbox"> Дъмпери</label>
-              <label><input type="checkbox"> Валяци</label>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-btn">
+            Категории
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <div class="dropdown-col">
+              <span class="dropdown-col-title">🚜 Земекопна техника</span>
+              <a href="./category-earthmoving.html">Багери</a>
+              <a href="./category-earthmoving.html">Мини багери</a>
+              <a href="./category-earthmoving.html">Дъмпери</a>
+              <a href="./category-earthmoving.html">Валяци</a>
             </div>
-
-            <div class="filter-group">
-              <p>Наличност</p>
-              <label><input type="checkbox"> Налични сега</label>
-              <label><input type="checkbox"> С доставка</label>
+            <div class="dropdown-col">
+              <span class="dropdown-col-title">🔧 Лека механизация</span>
+              <a href="./category-page.html">Машини за рязане</a>
+              <a href="./category-page.html">Трамбовки</a>
+              <a href="./category-page.html">Къртачи</a>
+              <a href="./category-page.html">Перфоратори</a>
             </div>
-          </aside>
-
-          <div class="catalog-content">
-            <div class="catalog-topbar">
-              <p>Показани 6 машини</p>
-
-              <select>
-                <option>Подреди по</option>
-                <option>Цена възходящо</option>
-                <option>Цена низходящо</option>
-                <option>Най-търсени</option>
-              </select>
+            <div class="dropdown-col">
+              <span class="dropdown-col-title">⚡ Генератори</span>
+              <a href="./category-page.html">Генератори</a>
+              <a href="./category-page.html">Дизелови генератори</a>
+              <a href="./category-page.html">Компресори</a>
+              <a href="./category-page.html">Въздушни компресори</a>
             </div>
-
-            <div class="catalog-grid">
-              <article class="catalog-card">
-                <div class="catalog-image-wrap">
-                  <img class="catalog-image" src="https://picsum.photos/seed/excavator1/800/500" alt="Мини багер под наем">
-                </div>
-                <span class="tag">Наличен</span>
-                <h3>Мини багер 1.8 т</h3>
-                <p>Подходящ за тесни пространства, изкопи и малки обекти.</p>
-                <div class="price-row">
-                  <span class="price">120 лв / ден</span>
-                  <a href="./index.html#contact" class="btn btn-primary">Запитване</a>
-                </div>
-              </article>
-
-              <article class="catalog-card">
-                <div class="catalog-image-wrap">
-                  <img class="catalog-image" src="https://picsum.photos/seed/excavator2/800/500" alt="Верижен багер под наем">
-                </div>
-                <span class="tag">Наличен</span>
-                <h3>Верижен багер</h3>
-                <p>За по-сериозни теренни и изкопни дейности.</p>
-                <div class="price-row">
-                  <span class="price">240 лв / ден</span>
-                  <a href="./index.html#contact" class="btn btn-primary">Запитване</a>
-                </div>
-              </article>
-
-              <article class="catalog-card">
-                <div class="catalog-image-wrap">
-                  <img class="catalog-image" src="https://picsum.photos/seed/dumper1/800/500" alt="Дъмпер под наем">
-                </div>
-                <span class="tag">Наличен</span>
-                <h3>Дъмпер</h3>
-                <p>За транспорт на инертни материали и отпадъци в обекта.</p>
-                <div class="price-row">
-                  <span class="price">150 лв / ден</span>
-                  <a href="./index.html#contact" class="btn btn-primary">Запитване</a>
-                </div>
-              </article>
-
-              <article class="catalog-card">
-                <div class="catalog-image-wrap">
-                  <img class="catalog-image" src="https://picsum.photos/seed/roller1/800/500" alt="Валяк под наем">
-                </div>
-                <span class="tag">Наличен</span>
-                <h3>Валяк</h3>
-                <p>За уплътняване на земна основа, чакъл и асфалт.</p>
-                <div class="price-row">
-                  <span class="price">180 лв / ден</span>
-                  <a href="./index.html#contact" class="btn btn-primary">Запитване</a>
-                </div>
-              </article>
-
-              <article class="catalog-card">
-                <div class="catalog-image-wrap">
-                  <img class="catalog-image" src="https://picsum.photos/seed/excavator3/800/500" alt="Компактен багер под наем">
-                </div>
-                <span class="tag">Наличен</span>
-                <h3>Компактен багер</h3>
-                <p>Практичен избор за градска среда и ограничени терени.</p>
-                <div class="price-row">
-                  <span class="price">135 лв / ден</span>
-                  <a href="./index.html#contact" class="btn btn-primary">Запитване</a>
-                </div>
-              </article>
-
-              <article class="catalog-card">
-                <div class="catalog-image-wrap">
-                  <img class="catalog-image" src="https://picsum.photos/seed/dumper2/800/500" alt="Мини дъмпер под наем">
-                </div>
-                <span class="tag">Наличен</span>
-                <h3>Мини дъмпер</h3>
-                <p>Подходящ за вътрешни дворове, тесни алеи и малки обекти.</p>
-                <div class="price-row">
-                  <span class="price">110 лв / ден</span>
-                  <a href="./index.html#contact" class="btn btn-primary">Запитване</a>
-                </div>
-              </article>
+            <div class="dropdown-col">
+              <span class="dropdown-col-title">📦 Складова техника</span>
+              <a href="./category-page.html">Мотокари</a>
+              <a href="./category-page.html">Електрокари</a>
+              <a href="./category-page.html">Палетни колички</a>
+              <a href="./category-page.html">Стакери</a>
             </div>
           </div>
         </div>
-      </section>
+        <a href="./product-page.html">Продукт</a>
+        <a href="./checkout-page.html">Checkout</a>
+      </nav>
+      <a href="./checkout-page.html" class="btn btn-primary">Резервирай</a>
     </div>
+  </header>
+
+  <main>
+
+    <!-- ЗАГЛАВИЕ -->
+    <div class="container category-title-bar">
+      <div class="breadcrumb">
+        <a href="./index.html">Начало</a> /
+        <a href="./index.html#categories">Категории</a> /
+        <span>Земекопна техника</span>
+      </div>
+      <h1>Земекопна техника</h1>
+      <p class="category-intro">Избери машини за изкопни дейности, подготовка на терен, транспорт на материали и уплътняване на строителната площадка.</p>
+    </div>
+
+    <!-- ФИЛТРИ -->
+    <section class="category-filters-bar">
+      <div class="container category-filters-inner">
+        <div class="filter-tags">
+          <button class="filter-tag active">Всички</button>
+          <button class="filter-tag">Багери</button>
+          <button class="filter-tag">Мини багери</button>
+          <button class="filter-tag">Дъмпери</button>
+          <button class="filter-tag">Валяци</button>
+        </div>
+        <div class="category-toolbar-right">
+          <span class="results-count">6 машини</span>
+          <select>
+            <option>Най-търсени</option>
+            <option>Цена: ниска към висока</option>
+            <option>Цена: висока към ниска</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- ПРОДУКТИ -->
+    <section class="category-layout">
+      <div class="container">
+        <div class="category-products-grid">
+
+          <article class="catalog-card">
+            <div class="catalog-image">Снимка</div>
+            <div class="catalog-info">
+              <span class="catalog-tag">Мини багери</span>
+              <h3>Мини багер 1.8 т</h3>
+              <p>Подходящ за тесни пространства, изкопи и малки обекти.</p>
+              <div class="catalog-footer">
+                <div class="catalog-price">от <strong>120 лв.</strong>/ден</div>
+                <div class="catalog-actions">
+                  <a href="./product-page.html" class="btn btn-secondary catalog-btn">Виж повече</a>
+                  <a href="./checkout-page.html" class="btn btn-primary catalog-btn">Запитване</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="catalog-card">
+            <div class="catalog-image">Снимка</div>
+            <div class="catalog-info">
+              <span class="catalog-tag">Багери</span>
+              <h3>Верижен багер</h3>
+              <p>За по-сериозни теренни и изкопни дейности.</p>
+              <div class="catalog-footer">
+                <div class="catalog-price">от <strong>240 лв.</strong>/ден</div>
+                <div class="catalog-actions">
+                  <a href="./product-page.html" class="btn btn-secondary catalog-btn">Виж повече</a>
+                  <a href="./checkout-page.html" class="btn btn-primary catalog-btn">Запитване</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="catalog-card">
+            <div class="catalog-image">Снимка</div>
+            <div class="catalog-info">
+              <span class="catalog-tag">Дъмпери</span>
+              <h3>Дъмпер</h3>
+              <p>За транспорт на инертни материали и отпадъци в обекта.</p>
+              <div class="catalog-footer">
+                <div class="catalog-price">от <strong>150 лв.</strong>/ден</div>
+                <div class="catalog-actions">
+                  <a href="./product-page.html" class="btn btn-secondary catalog-btn">Виж повече</a>
+                  <a href="./checkout-page.html" class="btn btn-primary catalog-btn">Запитване</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="catalog-card">
+            <div class="catalog-image">Снимка</div>
+            <div class="catalog-info">
+              <span class="catalog-tag">Валяци</span>
+              <h3>Валяк</h3>
+              <p>За уплътняване на земна основа, чакъл и асфалт.</p>
+              <div class="catalog-footer">
+                <div class="catalog-price">от <strong>180 лв.</strong>/ден</div>
+                <div class="catalog-actions">
+                  <a href="./product-page.html" class="btn btn-secondary catalog-btn">Виж повече</a>
+                  <a href="./checkout-page.html" class="btn btn-primary catalog-btn">Запитване</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="catalog-card">
+            <div class="catalog-image">Снимка</div>
+            <div class="catalog-info">
+              <span class="catalog-tag">Багери</span>
+              <h3>Компактен багер</h3>
+              <p>Практичен избор за градска среда и ограничени терени.</p>
+              <div class="catalog-footer">
+                <div class="catalog-price">от <strong>135 лв.</strong>/ден</div>
+                <div class="catalog-actions">
+                  <a href="./product-page.html" class="btn btn-secondary catalog-btn">Виж повече</a>
+                  <a href="./checkout-page.html" class="btn btn-primary catalog-btn">Запитване</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="catalog-card">
+            <div class="catalog-image">Снимка</div>
+            <div class="catalog-info">
+              <span class="catalog-tag">Дъмпери</span>
+              <h3>Мини дъмпер</h3>
+              <p>Подходящ за вътрешни дворове, тесни алеи и малки обекти.</p>
+              <div class="catalog-footer">
+                <div class="catalog-price">от <strong>110 лв.</strong>/ден</div>
+                <div class="catalog-actions">
+                  <a href="./product-page.html" class="btn btn-secondary catalog-btn">Виж повече</a>
+                  <a href="./checkout-page.html" class="btn btn-primary catalog-btn">Запитване</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA БАНЕР -->
+    <section class="category-cta-section">
+      <div class="container">
+        <div class="product-cta-box">
+          <div>
+            <h2>Не намираш подходяща машина?</h2>
+            <p>Обади се и ще ти помогнем да избереш правилната техника за твоя обект.</p>
+          </div>
+          <div class="product-cta-actions">
+            <a href="tel:+359888000000" class="btn btn-primary">📞 Обади се</a>
+            <a href="./checkout-page.html" class="btn btn-secondary" style="color:#fff;border-color:rgba(255,255,255,0.3);">Изпрати запитване</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="site-footer">
-    <div class="container">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">Rental Demo</div>
+        <p>Наем на строителна техника и малка механизация за жилищни, ремонтни, инфраструктурни и професионални обекти.</p>
+        <a href="./index.html#categories" class="footer-cta">Разгледай машините</a>
+      </div>
+      <div class="footer-column">
+        <h3>Навигация</h3>
+        <ul>
+          <li><a href="./index.html">Начало</a></li>
+          <li><a href="./category-page.html">Категории</a></li>
+          <li><a href="./product-page.html">Продукт</a></li>
+          <li><a href="./checkout-page.html">Checkout</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Категории</h3>
+        <ul>
+          <li><a href="./category-earthmoving.html">Земекопна техника</a></li>
+          <li><a href="./category-page.html">Лека механизация</a></li>
+          <li><a href="./category-page.html">Генератори</a></li>
+          <li><a href="./category-page.html">Складова техника</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Контакти</h3>
+        <ul>
+          <li>Телефон: <a href="tel:+359888000000">+359 888 000 000</a></li>
+          <li>Имейл: <a href="mailto:info@rentaldemo.bg">info@rentaldemo.bg</a></li>
+          <li>Локация: Бяла Слатина, България</li>
+          <li>Работно време: Пон - Пет, 08:00 - 18:00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
       <p>© 2026 Rental Demo. Всички права запазени.</p>
+      <div class="footer-legal">
+        <a href="#">Политика за поверителност</a>
+        <a href="#">Условия за ползване</a>
+        <a href="#">Бисквитки</a>
+      </div>
     </div>
   </footer>
 
+  <script src="./script.js"></script>
 </body>
 </html>

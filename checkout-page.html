@@ -10,56 +10,52 @@
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
+
   <header class="site-header">
     <div class="container header-row">
       <a href="./index.html" class="logo">Rental Demo</a>
-
       <nav class="main-nav">
         <a href="./index.html">Начало</a>
         <a href="./category-page.html">Категории</a>
         <a href="./product-page.html">Продукт</a>
         <a href="./checkout-page.html">Checkout</a>
       </nav>
-
-      <a href="./product-page.html" class="btn btn-secondary">Обратно към продукта</a>
+      <a href="./product-page.html" class="btn btn-outline-primary">← Обратно</a>
     </div>
   </header>
 
   <main class="checkout-page">
     <section class="checkout-section">
       <div class="container">
+
         <p class="breadcrumb">Начало / Продукт / Checkout</p>
 
         <div class="checkout-intro">
           <span class="eyebrow">Резервация</span>
           <h1>Завърши своята заявка</h1>
-          <p>
-            Това е demo checkout за наем на техника. Формата е само с дизайн,
-            без реално изпращане на данни.
-          </p>
+          <p>Попълни формата и ще се свържем с теб за потвърждение.</p>
         </div>
 
         <div class="checkout-layout">
+
+          <!-- ФОРМА -->
           <div class="checkout-form-box">
             <h2>Данни за клиента</h2>
-
             <form class="checkout-form">
+
               <div class="form-grid">
                 <div class="form-group">
                   <label for="fullName">Име и фамилия</label>
-                  <input type="text" id="fullName" placeholder="Въведи име и фамилия">
+                  <input type="text" id="fullName" placeholder="Въведи ime и фамилия">
                 </div>
-
                 <div class="form-group">
                   <label for="phone">Телефон</label>
                   <input type="tel" id="phone" placeholder="Въведи телефон">
                 </div>
-
                 <div class="form-group">
                   <label for="email">Имейл</label>
                   <input type="email" id="email" placeholder="Въведи имейл">
                 </div>
-
                 <div class="form-group">
                   <label for="company">Фирма</label>
                   <input type="text" id="company" placeholder="По желание">
@@ -76,7 +72,6 @@
                   <label for="date">Дата за резервация</label>
                   <input type="date" id="date">
                 </div>
-
                 <div class="form-group">
                   <label for="time">Час</label>
                   <input type="time" id="time">
@@ -93,34 +88,140 @@
                     <option>1 седмица</option>
                   </select>
                 </div>
-
                 <div class="form-group">
                   <label for="pickup">Начин на получаване</label>
-<select id="pickup">
-  <option>Вземане от обект</option>
-  <option>Доставка до адрес</option>
-</select>
-</div>
-</div>
+                  <select id="pickup">
+                    <option>Вземане от обект</option>
+                    <option>Доставка до адрес</option>
+                  </select>
+                </div>
+              </div>
 
-<div class="form-group">
-  <label for="notes">Допълнителна информация</label>
-  <textarea id="notes" rows="4" placeholder="Напиши детайли за обекта, срок, предпочитан час или друга важна информация"></textarea>
-</div>
+              <div class="form-group">
+                <label for="notes">Допълнителна информация</label>
+                <textarea id="notes" rows="4" placeholder="Напиши детайли за обекта, срок, предпочитан час или друга важна информация"></textarea>
+              </div>
 
-<div class="checkout-actions">
-  <button type="submit" class="btn btn-primary checkout-submit">
-    Завърши заявката
-  </button>
-  <p class="checkout-note">
-    Това е демо форма и не изпраща реални данни.
-  </p>
-</div>
-</form>
-</div>
-</div>
-</section>
-</main>
+              <div class="checkout-actions">
+                <button type="submit" class="btn btn-primary checkout-submit">Завърши заявката</button>
+                <p class="checkout-note">Ще се свържем с теб до 2 работни часа за потвърждение.</p>
+              </div>
+
+            </form>
+          </div>
+
+          <!-- SUMMARY ПАНЕЛ -->
+          <aside class="checkout-summary-box">
+
+            <div class="summary-machine">
+              <div class="summary-machine-img">🚜</div>
+              <div>
+                <span class="summary-machine-tag">Земекопна техника</span>
+                <h3>Мини багер CAT 301.8</h3>
+                <div class="summary-availability">
+                  <span class="availability-dot"></span> Наличен
+                </div>
+              </div>
+            </div>
+
+            <div class="summary-divider"></div>
+
+            <div class="summary-rows">
+              <div class="summary-row">
+                <span>Цена на ден</span>
+                <strong>129 лв.</strong>
+              </div>
+              <div class="summary-row">
+                <span>Период</span>
+                <strong>1 ден</strong>
+              </div>
+              <div class="summary-row">
+                <span>Доставка</span>
+                <strong>По договаряне</strong>
+              </div>
+            </div>
+
+            <div class="summary-divider"></div>
+
+            <div class="summary-row summary-total">
+              <span>Общо</span>
+              <strong>129 лв.</strong>
+            </div>
+
+            <div class="summary-divider"></div>
+
+            <div class="summary-highlights">
+              <div class="summary-highlight-item">
+                <span class="summary-highlight-icon">✓</span>
+                <span>Без скрити такси</span>
+              </div>
+              <div class="summary-highlight-item">
+                <span class="summary-highlight-icon">✓</span>
+                <span>Гъвкав срок на наем</span>
+              </div>
+              <div class="summary-highlight-item">
+                <span class="summary-highlight-icon">✓</span>
+                <span>Потвърждение до 2 часа</span>
+              </div>
+            </div>
+
+            <div class="summary-contact">
+              <p>Въпроси? Обади се:</p>
+              <a href="tel:+359888000000">+359 888 000 000</a>
+            </div>
+
+          </aside>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">Rental Demo</div>
+        <p>Наем на строителна техника и малка механизация за жилищни, ремонтни, инфраструктурни и професионални обекти.</p>
+        <a href="./category-page.html" class="footer-cta">Разгледай машините</a>
+      </div>
+      <div class="footer-column">
+        <h3>Навигация</h3>
+        <ul>
+          <li><a href="./index.html">Начало</a></li>
+          <li><a href="./category-page.html">Категории</a></li>
+          <li><a href="./product-page.html">Продукт</a></li>
+          <li><a href="./checkout-page.html">Checkout</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Категории</h3>
+        <ul>
+          <li><a href="./category-page.html">Мини багери</a></li>
+          <li><a href="./category-page.html">Виброплочи</a></li>
+          <li><a href="./category-page.html">Генератори</a></li>
+          <li><a href="./category-page.html">Къртачи</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Контакти</h3>
+        <ul>
+          <li>Телефон: <a href="tel:+359888000000">+359 888 000 000</a></li>
+          <li>Имейл: <a href="mailto:info@rentaldemo.bg">info@rentaldemo.bg</a></li>
+          <li>Локация: Бяла Слатина, България</li>
+          <li>Работно време: Пон - Пет, 08:00 - 18:00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© 2026 Rental Demo. Всички права запазени.</p>
+      <div class="footer-legal">
+        <a href="#">Политика за поверителност</a>
+        <a href="#">Условия за ползване</a>
+        <a href="#">Бисквитки</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
 </body>
 </html>
-
