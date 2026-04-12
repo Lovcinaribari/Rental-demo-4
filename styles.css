@@ -2300,6 +2300,8 @@ input {
   line-height: 1.7;
 }
 /* ── MOBILE NAV ── */
+/* ── MOBILE NAV ── */
+/* ── MOBILE NAV ── */
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -2352,6 +2354,13 @@ input {
     display: none;
   }
 
+  .nav-cta-mobile {
+    display: inline-flex;
+    margin-top: 8px;
+    width: 100%;
+    justify-content: center;
+  }
+
   .main-nav {
     display: none;
     position: absolute;
@@ -2398,25 +2407,5 @@ input {
   .dropdown-col {
     border-right: none;
     padding: 0;
-  }
-
-  .nav-dropdown.open .nav-dropdown-menu {
-    display: grid;
-  }
-}
-.nav-cta-mobile {
-  display: none;
-}
-
-@media (max-width: 768px) {
-  .nav-cta {
-    display: none;
-  }
-
-  .nav-cta-mobile {
-    display: inline-flex;
-    margin-top: 8px;
-    width: 100%;
-    justify-content: center;
   }
 }
