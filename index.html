@@ -330,32 +330,33 @@
     </div>
   </footer>
  
- <script>
-// Dropdown категории
-document.querySelectorAll('.nav-dropdown-btn').forEach(btn => {
-  btn.addEventListener('click', function(e) {
+ 
+<script>
+document.querySelectorAll('.nav-dropdown-btn').forEach((btn) => {
+  btn.addEventListener('click', function (e) {
+    e.preventDefault();
     e.stopPropagation();
-    const menu = this.closest('.nav-dropdown').querySelector('.nav-dropdown-menu');
-    const isOpen = menu.style.display === 'grid';
-    document.querySelectorAll('.nav-dropdown-menu').forEach(m => m.style.display = 'none');
-    if (!isOpen) menu.style.display = 'grid';
+
+    const dropdown = this.closest('.nav-dropdown');
+    const isOpen = dropdown.classList.contains('open');
+
+    document.querySelectorAll('.nav-dropdown').forEach((d) => {
+      d.classList.remove('open');
+    });
+
+    if (!isOpen) {
+      dropdown.classList.add('open');
+    }
   });
 });
 
-// Затвори dropdown при клик навън
-document.addEventListener('click', () => {
-  document.querySelectorAll('.nav-dropdown-menu').forEach(m => m.style.display = 'none');
-});
-
-// Кликаеми категорийни карти
-document.querySelectorAll('.rental-category-card').forEach(card => {
-  card.addEventListener('click', function() {
+document.querySelectorAll('.rental-category-card').forEach((card) => {
+  card.addEventListener('click', function () {
     window.location.href = this.dataset.href;
   });
   card.style.cursor = 'pointer';
 });
 
-// Хамбургер меню
 const navToggle = document.getElementById('navToggle');
 const mainNav = document.getElementById('mainNav');
 
@@ -365,16 +366,20 @@ if (navToggle && mainNav) {
     navToggle.classList.toggle('open');
     mainNav.classList.toggle('open');
   });
+}
 
-  document.addEventListener('click', (e) => {
+document.addEventListener('click', (e) => {
+  document.querySelectorAll('.nav-dropdown').forEach((d) => {
+    if (!d.contains(e.target)) {
+      d.classList.remove('open');
+    }
+  });
+
+  if (navToggle && mainNav) {
     if (!mainNav.contains(e.target) && !navToggle.contains(e.target)) {
       navToggle.classList.remove('open');
       mainNav.classList.remove('open');
     }
-  });
-}
+  }
+});
 </script>
-
-
-</body>
-</html>
