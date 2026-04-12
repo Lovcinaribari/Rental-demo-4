@@ -14,7 +14,13 @@
   <div class="container header-row">
     <a href="./index.html" class="logo">Rental Demo</a>
 
-    <nav class="main-nav">
+    <button class="nav-toggle" id="navToggle" aria-label="Меню">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="main-nav" id="mainNav">
       <a href="./index.html">Начало</a>
 
       <div class="nav-dropdown">
@@ -56,12 +62,14 @@
 
       <a href="./product-page.html">Продукт</a>
       <a href="./checkout-page.html">Checkout</a>
+
+      <a href="#" class="btn btn-outline-primary nav-cta-mobile">Вход / Регистрация</a>
     </nav>
 
-    <a href="#" class="btn btn-outline-primary">Вход / Регистрация</a>
+    <a href="#" class="btn btn-outline-primary nav-cta">Вход / Регистрация</a>
   </div>
 </header>
-  <main>
+<main>
 
 <!-- HERO -->
 <section class="hero hero-home">
@@ -341,6 +349,24 @@ document.addEventListener('click', () => {
   card.style.cursor = 'pointer';
 });
 });
+// Хамбургер меню
+const navToggle = document.getElementById('navToggle');
+const mainNav = document.getElementById('mainNav');
+
+if (navToggle && mainNav) {
+  navToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    navToggle.classList.toggle('open');
+    mainNav.classList.toggle('open');
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!mainNav.contains(e.target) && !navToggle.contains(e.target)) {
+      navToggle.classList.remove('open');
+      mainNav.classList.remove('open');
+    }
+  });
+}
 </script>
 
 
