@@ -331,6 +331,7 @@
   </footer>
  
  <script>
+// Dropdown категории
 document.querySelectorAll('.nav-dropdown-btn').forEach(btn => {
   btn.addEventListener('click', function(e) {
     e.stopPropagation();
@@ -340,15 +341,20 @@ document.querySelectorAll('.nav-dropdown-btn').forEach(btn => {
     if (!isOpen) menu.style.display = 'grid';
   });
 });
+
+// Затвори dropdown при клик навън
 document.addEventListener('click', () => {
   document.querySelectorAll('.nav-dropdown-menu').forEach(m => m.style.display = 'none');
-  document.querySelectorAll('.rental-category-card').forEach(card => {
+});
+
+// Кликаеми категорийни карти
+document.querySelectorAll('.rental-category-card').forEach(card => {
   card.addEventListener('click', function() {
     window.location.href = this.dataset.href;
   });
   card.style.cursor = 'pointer';
 });
-});
+
 // Хамбургер меню
 const navToggle = document.getElementById('navToggle');
 const mainNav = document.getElementById('mainNav');
