@@ -2396,196 +2396,43 @@ input {
 
 /* най-долу в css файла */
 @media (max-width: 768px) {
-  .site-header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: transparent;
-    border-bottom: none;
-    padding: 10px 0;
-  }
-
-  .site-header .container.header-row {
-    width: min(100% - 24px, 1200px);
-    margin: 0 auto;
+  .header-row {
     min-height: 72px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    padding: 0 18px;
-    background: #fff;
-    border: 1px solid #e5e7eb;
-    border-radius: 24px;
-    box-shadow: 0 8px 24px rgba(17, 24, 39, 0.08);
-    position: relative;
     flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 12px 0;
   }
 
-  .logo {
-    font-size: 1.05rem;
-    font-weight: 800;
-    white-space: nowrap;
-    flex: 1;
+  .main-nav,
+  .header-actions {
+    display: none;
   }
 
-  .nav-toggle {
+  .mobile-menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     width: 44px;
     height: 44px;
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    background: transparent;
-    border: none;
-    padding: 0;
-    flex-shrink: 0;
   }
 
-  .nav-toggle span {
-    display: block;
-    width: 20px;
-    height: 2px;
-    background: #111827;
-    border-radius: 999px;
-    transition: 0.25s ease;
-  }
-
-  .nav-toggle.open span:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
-  }
-
-  .nav-toggle.open span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .nav-toggle.open span:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
-  }
-
-  .nav-cta {
-    display: none;
-  }
-
-  .main-nav {
-    display: none;
-  }
-
-  .main-nav.open {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 8px;
-    position: absolute;
-    top: calc(100% + 10px);
-    left: 0;
-    right: 0;
-    background: #fff;
-    border: 1px solid #e5e7eb;
-    border-radius: 20px;
-    box-shadow: 0 18px 40px rgba(17, 24, 39, 0.12);
-    padding: 14px;
-    z-index: 1001;
-  }
-
-  .main-nav > a,
-  .main-nav .nav-dropdown-btn,
-  .main-nav .nav-cta-mobile {
-    width: 100%;
-    min-height: 46px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 14px;
-    border-radius: 12px;
-    color: #111827;
-    background: #fff;
-  }
-
-  .nav-cta-mobile {
-    display: inline-flex !important;
-    justify-content: center !important;
-    margin-top: 4px;
-  }
-
-  .nav-dropdown {
-    width: 100%;
-  }
-
-  .nav-dropdown-menu {
-    display: none !important;
-    position: static !important;
-    box-shadow: none !important;
-    border: 0 !important;
-    padding: 8px 0 0 !important;
-    background: transparent !important;
-    grid-template-columns: 1fr !important;
-    gap: 12px !important;
-  }
-
-  .nav-dropdown.open .nav-dropdown-menu {
-    display: grid !important;
-  }
-
-  .dropdown-col {
-    padding: 10px 12px;
-    background: #f9fafb;
-    border: 1px solid #e5e7eb;
-    border-radius: 14px;
-  }
-
-  .hero-home-content {
-    padding: 42px 0 24px;
-  }
-
-  .hero-copy {
-    max-width: 100%;
-    text-align: center;
-    margin: 0 auto 18px;
-    padding: 0 12px;
-  }
-
-  .hero-title {
-    font-size: clamp(2.3rem, 12vw, 3.8rem);
-    line-height: 0.92;
-    letter-spacing: -0.04em;
-    max-width: 8ch;
-    margin: 0 auto 14px;
-    text-wrap: balance;
-  }
-
-  .hero-description {
-    font-size: 1rem;
-    line-height: 1.45;
-    max-width: 24ch;
-    margin: 0 auto;
+  .site-header .container {
+    padding-inline: 16px;
   }
 
   .hero-search-bar {
-    display: grid;
     grid-template-columns: 1fr;
-    gap: 0;
-    margin-top: 18px;
-    border-radius: 24px;
+    border-radius: 20px;
     overflow: hidden;
   }
 
   .hero-search-item {
-    border-right: none !important;
-    border-bottom: 1px solid #e5e7eb;
-    min-height: 72px;
-    padding: 14px 18px;
-  }
-
-  .hero-search-item-wide {
-    grid-column: auto;
+    min-height: 56px;
+    padding: 10px 16px;
   }
 
   .hero-search-btn {
-    width: 100%;
-    min-height: 62px;
-    border-radius: 0 0 24px 24px;
-    justify-content: center;
+    min-height: 56px;
+    border-radius: 0;
   }
 }
