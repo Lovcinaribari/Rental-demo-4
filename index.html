@@ -13,7 +13,7 @@
  <header class="site-header">
   <div class="container header-row">
 
-    <button class="nav-toggle" id="navToggle" aria-label="Меню">
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="Меню" aria-controls="mainNav" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
 
@@ -21,11 +21,15 @@
 
     <nav class="main-nav" id="mainNav">
       <a href="./index.html">Начало</a>
+
       <div class="nav-dropdown">
-        <button class="nav-dropdown-btn">
+        <button class="nav-dropdown-btn" type="button">
           Категории
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+            <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
         </button>
+
         <div class="nav-dropdown-menu">
           <div class="dropdown-col">
             <span class="dropdown-col-title">🚜 Земекопна техника</span>
@@ -34,6 +38,7 @@
             <a href="./category-earthmoving.html">Дъмпери</a>
             <a href="./category-earthmoving.html">Валяци</a>
           </div>
+
           <div class="dropdown-col">
             <span class="dropdown-col-title">🔧 Лека механизация</span>
             <a href="./category-page.html">Машини за рязане</a>
@@ -41,6 +46,7 @@
             <a href="./category-page.html">Къртачи</a>
             <a href="./category-page.html">Перфоратори</a>
           </div>
+
           <div class="dropdown-col">
             <span class="dropdown-col-title">⚡ Генератори</span>
             <a href="./category-page.html">Генератори</a>
@@ -48,6 +54,7 @@
             <a href="./category-page.html">Компресори</a>
             <a href="./category-page.html">Въздушни компресори</a>
           </div>
+
           <div class="dropdown-col">
             <span class="dropdown-col-title">📦 Складова техника</span>
             <a href="./category-page.html">Мотокари</a>
@@ -57,6 +64,7 @@
           </div>
         </div>
       </div>
+
       <a href="./product-page.html">Продукт</a>
       <a href="./checkout-page.html">Checkout</a>
       <a href="#" class="btn btn-outline-primary nav-cta-mobile">Вход / Регистрация</a>
@@ -65,6 +73,7 @@
     <a href="#" class="btn btn-outline-primary nav-cta">Вход / Регистрация</a>
   </div>
 </header>
+
 
 <!-- MOBILE OVERLAY -->
 <div class="mobile-overlay" id="mobileOverlay"></div>
@@ -331,25 +340,53 @@
  
  
 <script>
-// Dropdown категории (desktop)
-document.querySelectorAll('.nav-dropdown-btn').forEach(btn => {
-  btn.addEventListener('click', function(e) {
+// Dropdown категории
+const dropdownButtons = document.querySelectorAll('.nav-dropdown-btn');
+const dropdowns = document.querySelectorAll('.nav-dropdown');
+
+function closeAllDropdowns() {
+  dropdowns.forEach(dropdown => {
+    dropdown.classList.remove('open');
+    const btn = dropdown.querySelector('.nav-dropdown-btn');
+    if (btn) btn.setAttribute('aria-expanded', 'false');
+  });
+}
+
+dropdownButtons.forEach(btn => {
+  btn.setAttribute('aria-expanded', 'false');
+
+  btn.addEventListener('click', function (e) {
+    e.preventDefault();
     e.stopPropagation();
-    const menu = this.closest('.nav-dropdown').querySelector('.nav-dropdown-menu');
-    const isOpen = menu.style.display === 'grid';
-    document.querySelectorAll('.nav-dropdown-menu').forEach(m => m.style.display = 'none');
-    if (!isOpen) menu.style.display = 'grid';
+
+    const dropdown = this.closest('.nav-dropdown');
+    const isOpen = dropdown.classList.contains('open');
+
+    closeAllDropdowns();
+
+    if (!isOpen) {
+      dropdown.classList.add('open');
+      this.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
+document.querySelectorAll('.nav-dropdown-menu').forEach(menu => {
+  menu.addEventListener('click', function (e) {
+    e.stopPropagation();
   });
 });
 
 document.addEventListener('click', () => {
-  document.querySelectorAll('.nav-dropdown-menu').forEach(m => m.style.display = 'none');
+  closeAllDropdowns();
 });
 
 // Кликаеми категорийни карти
 document.querySelectorAll('.rental-category-card').forEach(card => {
-  card.addEventListener('click', function() {
-    window.location.href = this.dataset.href;
+  card.addEventListener('click', function () {
+    if (this.dataset.href) {
+      window.location.href = this.dataset.href;
+    }
   });
   card.style.cursor = 'pointer';
 });
@@ -360,20 +397,26 @@ const mainNav = document.getElementById('mainNav');
 const mobileOverlay = document.getElementById('mobileOverlay');
 
 function openNav() {
-  navToggle.classList.add('open');
-  mainNav.classList.add('open');
-  mobileOverlay.classList.add('open');
+  if (navToggle) {
+    navToggle.classList.add('open');
+    navToggle.setAttribute('aria-expanded', 'true');
+  }
+  if (mainNav) mainNav.classList.add('open');
+  if (mobileOverlay) mobileOverlay.classList.add('open');
   document.body.style.overflow = 'hidden';
 }
 
 function closeNav() {
-  navToggle.classList.remove('open');
-  mainNav.classList.remove('open');
-  mobileOverlay.classList.remove('open');
+  if (navToggle) {
+    navToggle.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  }
+  if (mainNav) mainNav.classList.remove('open');
+  if (mobileOverlay) mobileOverlay.classList.remove('open');
   document.body.style.overflow = '';
 }
 
-if (navToggle) {
+if (navToggle && mainNav) {
   navToggle.addEventListener('click', (e) => {
     e.stopPropagation();
     mainNav.classList.contains('open') ? closeNav() : openNav();
@@ -385,6 +428,9 @@ if (mobileOverlay) {
 }
 
 window.addEventListener('resize', () => {
-  if (window.innerWidth > 768) closeNav();
+  if (window.innerWidth > 768) {
+    closeNav();
+  }
+  closeAllDropdowns();
 });
 </script>
