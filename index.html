@@ -10,19 +10,17 @@
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-  <header class="site-header">
+ <header class="site-header">
   <div class="container header-row">
-    <a href="./index.html" class="logo">Rental Demo</a>
 
     <button class="nav-toggle" id="navToggle" aria-label="Меню">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </button>
+
+    <a href="./index.html" class="logo">Rental Demo</a>
 
     <nav class="main-nav" id="mainNav">
       <a href="./index.html">Начало</a>
-
       <div class="nav-dropdown">
         <button class="nav-dropdown-btn">
           Категории
@@ -31,10 +29,10 @@
         <div class="nav-dropdown-menu">
           <div class="dropdown-col">
             <span class="dropdown-col-title">🚜 Земекопна техника</span>
-            <a href="./category-page.html">Багери</a>
-            <a href="./category-page.html">Мини багери</a>
-            <a href="./category-page.html">Дъмпери</a>
-            <a href="./category-page.html">Валяци</a>
+            <a href="./category-earthmoving.html">Багери</a>
+            <a href="./category-earthmoving.html">Мини багери</a>
+            <a href="./category-earthmoving.html">Дъмпери</a>
+            <a href="./category-earthmoving.html">Валяци</a>
           </div>
           <div class="dropdown-col">
             <span class="dropdown-col-title">🔧 Лека механизация</span>
@@ -59,16 +57,17 @@
           </div>
         </div>
       </div>
-
       <a href="./product-page.html">Продукт</a>
       <a href="./checkout-page.html">Checkout</a>
-
       <a href="#" class="btn btn-outline-primary nav-cta-mobile">Вход / Регистрация</a>
     </nav>
 
     <a href="#" class="btn btn-outline-primary nav-cta">Вход / Регистрация</a>
   </div>
 </header>
+
+<!-- MOBILE OVERLAY -->
+<div class="mobile-overlay" id="mobileOverlay"></div>
 <main>
 
 <!-- HERO -->
@@ -332,54 +331,60 @@
  
  
 <script>
-document.querySelectorAll('.nav-dropdown-btn').forEach((btn) => {
-  btn.addEventListener('click', function (e) {
-    e.preventDefault();
+// Dropdown категории (desktop)
+document.querySelectorAll('.nav-dropdown-btn').forEach(btn => {
+  btn.addEventListener('click', function(e) {
     e.stopPropagation();
-
-    const dropdown = this.closest('.nav-dropdown');
-    const isOpen = dropdown.classList.contains('open');
-
-    document.querySelectorAll('.nav-dropdown').forEach((d) => {
-      d.classList.remove('open');
-    });
-
-    if (!isOpen) {
-      dropdown.classList.add('open');
-    }
+    const menu = this.closest('.nav-dropdown').querySelector('.nav-dropdown-menu');
+    const isOpen = menu.style.display === 'grid';
+    document.querySelectorAll('.nav-dropdown-menu').forEach(m => m.style.display = 'none');
+    if (!isOpen) menu.style.display = 'grid';
   });
 });
 
-document.querySelectorAll('.rental-category-card').forEach((card) => {
-  card.addEventListener('click', function () {
+document.addEventListener('click', () => {
+  document.querySelectorAll('.nav-dropdown-menu').forEach(m => m.style.display = 'none');
+});
+
+// Кликаеми категорийни карти
+document.querySelectorAll('.rental-category-card').forEach(card => {
+  card.addEventListener('click', function() {
     window.location.href = this.dataset.href;
   });
   card.style.cursor = 'pointer';
 });
 
+// Хамбургер меню
 const navToggle = document.getElementById('navToggle');
 const mainNav = document.getElementById('mainNav');
+const mobileOverlay = document.getElementById('mobileOverlay');
 
-if (navToggle && mainNav) {
+function openNav() {
+  navToggle.classList.add('open');
+  mainNav.classList.add('open');
+  mobileOverlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeNav() {
+  navToggle.classList.remove('open');
+  mainNav.classList.remove('open');
+  mobileOverlay.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+if (navToggle) {
   navToggle.addEventListener('click', (e) => {
     e.stopPropagation();
-    navToggle.classList.toggle('open');
-    mainNav.classList.toggle('open');
+    mainNav.classList.contains('open') ? closeNav() : openNav();
   });
 }
 
-document.addEventListener('click', (e) => {
-  document.querySelectorAll('.nav-dropdown').forEach((d) => {
-    if (!d.contains(e.target)) {
-      d.classList.remove('open');
-    }
-  });
+if (mobileOverlay) {
+  mobileOverlay.addEventListener('click', closeNav);
+}
 
-  if (navToggle && mainNav) {
-    if (!mainNav.contains(e.target) && !navToggle.contains(e.target)) {
-      navToggle.classList.remove('open');
-      mainNav.classList.remove('open');
-    }
-  }
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 768) closeNav();
 });
 </script>
