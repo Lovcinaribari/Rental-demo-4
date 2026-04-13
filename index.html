@@ -433,4 +433,34 @@ window.addEventListener('resize', () => {
   }
   closeAllDropdowns();
 });
+const siteHeader = document.querySelector('.site-header');
+let lastScrollY = window.scrollY;
+
+function handleMobileHeaderScroll() {
+  if (!siteHeader || window.innerWidth > 768) return;
+
+  const currentScrollY = window.scrollY;
+
+  if (currentScrollY <= 8) {
+    siteHeader.classList.add('at-top');
+    siteHeader.classList.remove('scrolled', 'hide-on-scroll');
+    lastScrollY = currentScrollY;
+    return;
+  }
+
+  siteHeader.classList.remove('at-top');
+  siteHeader.classList.add('scrolled');
+
+  if (currentScrollY > lastScrollY && currentScrollY > 80) {
+    siteHeader.classList.add('hide-on-scroll');
+  } else {
+    siteHeader.classList.remove('hide-on-scroll');
+  }
+
+  lastScrollY = currentScrollY;
+}
+
+window.addEventListener('scroll', handleMobileHeaderScroll, { passive: true });
+window.addEventListener('resize', handleMobileHeaderScroll);
+handleMobileHeaderScroll();
 </script>

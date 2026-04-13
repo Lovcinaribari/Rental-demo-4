@@ -2275,3 +2275,50 @@ input {
     white-space: nowrap;
   }
 }
+/* MOBILE HEADER IMPROVE */
+@media (max-width: 768px) {
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 300;
+    padding: 8px 16px;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    transition: background 0.25s ease;
+  }
+
+  .header-row {
+    min-height: 58px;
+    padding: 0 18px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    box-shadow: 0 8px 30px rgba(17, 24, 39, 0.08);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    transition:
+      transform 0.28s ease,
+      opacity 0.28s ease,
+      background 0.25s ease,
+      box-shadow 0.25s ease;
+    will-change: transform, opacity;
+  }
+
+  .site-header.at-top .header-row {
+    background: rgba(255, 255, 255, 0.42);
+    border: 1px solid rgba(255, 255, 255, 0.38);
+    box-shadow: none;
+  }
+
+  .site-header.scrolled .header-row {
+    background: rgba(255, 255, 255, 0.88);
+    box-shadow: 0 10px 28px rgba(17, 24, 39, 0.10);
+  }
+
+  .site-header.hide-on-scroll .header-row {
+    transform: translateY(calc(-100% - 10px)) scale(0.96);
+    opacity: 0;
+    pointer-events: none;
+  }
+}
