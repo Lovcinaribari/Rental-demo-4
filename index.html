@@ -416,28 +416,22 @@ function closeNav() {
   document.body.style.overflow = '';
 }
 
-if (navToggle && mainNav) {
-  navToggle.addEventListener('click', (e) => {
-    e.stopPropagation();
-    mainNav.classList.contains('open') ? closeNav() : openNav();
-  });
-}
-
-if (mobileOverlay) {
-  mobileOverlay.addEventListener('click', closeNav);
-}
-
-window.addEventListener('resize', () => {
-  if (window.innerWidth > 768) {
-    closeNav();
-  }
-  closeAllDropdowns();
-});
+// Mobile header scroll
 const siteHeader = document.querySelector('.site-header');
 let lastScrollY = window.scrollY;
 
+function resetDesktopHeaderState() {
+  if (!siteHeader) return;
+  siteHeader.classList.remove('at-top', 'scrolled', 'hide-on-scroll');
+}
+
 function handleMobileHeaderScroll() {
-  if (!siteHeader || window.innerWidth > 768) return;
+  if (!siteHeader) return;
+
+  if (window.innerWidth > 768) {
+    resetDesktopHeaderState();
+    return;
+  }
 
   const currentScrollY = window.scrollY;
 
@@ -460,7 +454,27 @@ function handleMobileHeaderScroll() {
   lastScrollY = currentScrollY;
 }
 
+if (navToggle && mainNav) {
+  navToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    mainNav.classList.contains('open') ? closeNav() : openNav();
+  });
+}
+
+if (mobileOverlay) {
+  mobileOverlay.addEventListener('click', closeNav);
+}
+
 window.addEventListener('scroll', handleMobileHeaderScroll, { passive: true });
-window.addEventListener('resize', handleMobileHeaderScroll);
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 768) {
+    closeNav();
+  }
+  closeAllDropdowns();
+  handleMobileHeaderScroll();
+});
+
 handleMobileHeaderScroll();
 </script>
+
