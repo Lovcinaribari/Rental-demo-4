@@ -12,8 +12,14 @@
 <body>
  <header class="site-header">
   <div class="container header-row">
-
-    <button class="nav-toggle" id="navToggle" type="button" aria-label="Меню" aria-controls="mainNav" aria-expanded="false">
+    <button
+      class="nav-toggle"
+      id="navToggle"
+      type="button"
+      aria-label="Меню"
+      aria-controls="mainNav"
+      aria-expanded="false"
+    >
       <span></span><span></span><span></span>
     </button>
 
@@ -23,7 +29,7 @@
       <a href="./index.html">Начало</a>
 
       <div class="nav-dropdown">
-        <button class="nav-dropdown-btn" type="button">
+        <button class="nav-dropdown-btn" type="button" aria-expanded="false">
           Категории
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
             <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
@@ -73,7 +79,6 @@
     <a href="#" class="btn btn-outline-primary nav-cta">Вход / Регистрация</a>
   </div>
 </header>
-
 
 <!-- MOBILE OVERLAY -->
 <div class="mobile-overlay" id="mobileOverlay"></div>
@@ -338,142 +343,132 @@
     </div>
   </footer>
  
- 
-<script>
-// Dropdown категории
-const dropdownButtons = document.querySelectorAll('.nav-dropdown-btn');
-const dropdowns = document.querySelectorAll('.nav-dropdown');
+ <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const dropdownButtons = document.querySelectorAll('.nav-dropdown-btn');
+  const dropdowns = document.querySelectorAll('.nav-dropdown');
+  const navToggle = document.getElementById('navToggle');
+  const mainNav = document.getElementById('mainNav');
+  const mobileOverlay = document.getElementById('mobileOverlay');
+  const siteHeader = document.querySelector('.site-header');
 
-function closeAllDropdowns() {
-  dropdowns.forEach(dropdown => {
-    dropdown.classList.remove('open');
-    const btn = dropdown.querySelector('.nav-dropdown-btn');
-    if (btn) btn.setAttribute('aria-expanded', 'false');
+  function closeAllDropdowns() {
+    dropdowns.forEach(dropdown => {
+      dropdown.classList.remove('open');
+      const btn = dropdown.querySelector('.nav-dropdown-btn');
+      if (btn) btn.setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  dropdownButtons.forEach(btn => {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const dropdown = this.closest('.nav-dropdown');
+      const isOpen = dropdown.classList.contains('open');
+
+      closeAllDropdowns();
+
+      if (!isOpen) {
+        dropdown.classList.add('open');
+        this.setAttribute('aria-expanded', 'true');
+      }
+    });
   });
-}
 
-dropdownButtons.forEach(btn => {
-  btn.setAttribute('aria-expanded', 'false');
+  document.querySelectorAll('.nav-dropdown-menu').forEach(menu => {
+    menu.addEventListener('click', e => e.stopPropagation());
+  });
 
-  btn.addEventListener('click', function (e) {
-    e.preventDefault();
-    e.stopPropagation();
-
-    const dropdown = this.closest('.nav-dropdown');
-    const isOpen = dropdown.classList.contains('open');
-
+  document.addEventListener('click', () => {
     closeAllDropdowns();
+  });
 
-    if (!isOpen) {
-      dropdown.classList.add('open');
-      this.setAttribute('aria-expanded', 'true');
+  function openNav() {
+    if (navToggle) {
+      navToggle.classList.add('open');
+      navToggle.setAttribute('aria-expanded', 'true');
     }
-  });
-});
+    if (mainNav) mainNav.classList.add('open');
+    if (mobileOverlay) mobileOverlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
 
-document.querySelectorAll('.nav-dropdown-menu').forEach(menu => {
-  menu.addEventListener('click', function (e) {
-    e.stopPropagation();
-  });
-});
-
-document.addEventListener('click', () => {
-  closeAllDropdowns();
-});
-
-// Кликаеми категорийни карти
-document.querySelectorAll('.rental-category-card').forEach(card => {
-  card.addEventListener('click', function () {
-    if (this.dataset.href) {
-      window.location.href = this.dataset.href;
+  function closeNav() {
+    if (navToggle) {
+      navToggle.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
     }
+    if (mainNav) mainNav.classList.remove('open');
+    if (mobileOverlay) mobileOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+    closeAllDropdowns();
+  }
+
+  if (navToggle && mainNav) {
+    navToggle.addEventListener('click', e => {
+      e.stopPropagation();
+      mainNav.classList.contains('open') ? closeNav() : openNav();
+    });
+  }
+
+  if (mobileOverlay) {
+    mobileOverlay.addEventListener('click', closeNav);
+  }
+
+  document.querySelectorAll('.main-nav a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 768) closeNav();
+    });
   });
-  card.style.cursor = 'pointer';
-});
 
-// Хамбургер меню
-const navToggle = document.getElementById('navToggle');
-const mainNav = document.getElementById('mainNav');
-const mobileOverlay = document.getElementById('mobileOverlay');
+  let lastScrollY = window.scrollY;
 
-function openNav() {
-  if (navToggle) {
-    navToggle.classList.add('open');
-    navToggle.setAttribute('aria-expanded', 'true');
-  }
-  if (mainNav) mainNav.classList.add('open');
-  if (mobileOverlay) mobileOverlay.classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeNav() {
-  if (navToggle) {
-    navToggle.classList.remove('open');
-    navToggle.setAttribute('aria-expanded', 'false');
-  }
-  if (mainNav) mainNav.classList.remove('open');
-  if (mobileOverlay) mobileOverlay.classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-// Mobile header scroll
-const siteHeader = document.querySelector('.site-header');
-let lastScrollY = window.scrollY;
-
-function resetDesktopHeaderState() {
-  if (!siteHeader) return;
-  siteHeader.classList.remove('at-top', 'scrolled', 'hide-on-scroll');
-}
-
-function handleMobileHeaderScroll() {
-  if (!siteHeader) return;
-
-  if (window.innerWidth > 768) {
-    resetDesktopHeaderState();
-    return;
+  function resetDesktopHeaderState() {
+    if (!siteHeader) return;
+    siteHeader.classList.remove('at-top', 'scrolled', 'hide-on-scroll');
   }
 
-  const currentScrollY = window.scrollY;
+  function handleMobileHeaderScroll() {
+    if (!siteHeader) return;
 
-  if (currentScrollY <= 8) {
-    siteHeader.classList.add('at-top');
-    siteHeader.classList.remove('scrolled', 'hide-on-scroll');
+    if (window.innerWidth > 768) {
+      resetDesktopHeaderState();
+      return;
+    }
+
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY <= 8) {
+      siteHeader.classList.add('at-top');
+      siteHeader.classList.remove('scrolled', 'hide-on-scroll');
+      lastScrollY = currentScrollY;
+      return;
+    }
+
+    siteHeader.classList.remove('at-top');
+    siteHeader.classList.add('scrolled');
+
+    if (currentScrollY > lastScrollY && currentScrollY > 80) {
+      siteHeader.classList.add('hide-on-scroll');
+    } else {
+      siteHeader.classList.remove('hide-on-scroll');
+    }
+
     lastScrollY = currentScrollY;
-    return;
   }
 
-  siteHeader.classList.remove('at-top');
-  siteHeader.classList.add('scrolled');
+  window.addEventListener('scroll', handleMobileHeaderScroll, { passive: true });
 
-  if (currentScrollY > lastScrollY && currentScrollY > 80) {
-    siteHeader.classList.add('hide-on-scroll');
-  } else {
-    siteHeader.classList.remove('hide-on-scroll');
-  }
-
-  lastScrollY = currentScrollY;
-}
-
-if (navToggle && mainNav) {
-  navToggle.addEventListener('click', (e) => {
-    e.stopPropagation();
-    mainNav.classList.contains('open') ? closeNav() : openNav();
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      closeNav();
+    }
+    closeAllDropdowns();
+    handleMobileHeaderScroll();
   });
-}
 
-if (mobileOverlay) {
-  mobileOverlay.addEventListener('click', closeNav);
-}
-
-window.addEventListener('scroll', handleMobileHeaderScroll, { passive: true });
-
-window.addEventListener('resize', () => {
-  if (window.innerWidth > 768) {
-    closeNav();
-  }
-  closeAllDropdowns();
   handleMobileHeaderScroll();
 });
-
-handleMobileHeaderScroll();
 </script>
