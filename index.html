@@ -377,12 +377,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Спира затварянето при клик вътре в менюто
   document.querySelectorAll('.nav-dropdown-menu').forEach(menu => {
     menu.addEventListener('click', e => e.stopPropagation());
   });
 
-  document.addEventListener('click', () => {
-    closeAllDropdowns();
+  // Затваря при клик извън навигацията
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.nav-dropdown')) {
+      closeAllDropdowns();
+    }
+    if (!e.target.closest('.site-header') && !e.target.closest('#mobileOverlay')) {
+      closeNav();
+    }
+  });
+
+  // Затваря при ESC
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      closeAllDropdowns();
+      closeNav();
+    }
   });
 
   function openNav() {
