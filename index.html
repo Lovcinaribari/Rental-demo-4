@@ -343,7 +343,7 @@
     </div>
   </footer>
  
- <script>
+<script>
 document.addEventListener('DOMContentLoaded', () => {
   const dropdownButtons = document.querySelectorAll('.nav-dropdown-btn');
   const dropdowns = document.querySelectorAll('.nav-dropdown');
@@ -360,10 +360,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-dropdownButtons.forEach(btn => {
+  let dropdownJustOpened = false;
+
+  dropdownButtons.forEach(btn => {
     btn.addEventListener('click', function (e) {
       e.preventDefault();
-      e.stopPropagation();
 
       const dropdown = this.closest('.nav-dropdown');
       const isOpen = dropdown.classList.contains('open');
@@ -373,10 +374,10 @@ dropdownButtons.forEach(btn => {
       if (!isOpen) {
         dropdown.classList.add('open');
         this.setAttribute('aria-expanded', 'true');
+        dropdownJustOpened = true;
       }
-    }, true);   // ← само това се добавя: ", true"
+    });
   });
-
 
   // Спира затварянето при клик вътре в менюто
   document.querySelectorAll('.nav-dropdown-menu').forEach(menu => {
@@ -385,6 +386,10 @@ dropdownButtons.forEach(btn => {
 
   // Затваря при клик извън навигацията
   document.addEventListener('click', e => {
+    if (dropdownJustOpened) {
+      dropdownJustOpened = false;
+      return;
+    }
     if (!e.target.closest('.nav-dropdown')) {
       closeAllDropdowns();
     }
@@ -488,3 +493,4 @@ dropdownButtons.forEach(btn => {
   handleMobileHeaderScroll();
 });
 </script>
+
