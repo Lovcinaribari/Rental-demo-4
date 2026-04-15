@@ -10,79 +10,87 @@
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
- <header class="site-header">
-  <div class="container header-row">
-    <button
-      class="nav-toggle"
-      id="navToggle"
-      type="button"
-      aria-label="Меню"
-      aria-controls="mainNav"
-      aria-expanded="false"
-    >
-      <span></span><span></span><span></span>
-    </button>
 
-    <a href="./index.html" class="logo">Rental Demo</a>
+<header class="site-header">
+  <div class="container">
+    <div class="header-row">
+      <button
+        class="nav-toggle"
+        id="navToggle"
+        type="button"
+        aria-label="Отвори менюто"
+        aria-controls="mainNav"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
-    <nav class="main-nav" id="mainNav">
-      <a href="./index.html">Начало</a>
+      <a href="./index.html" class="logo">Rental Demo</a>
 
-      <div class="nav-dropdown">
-        <button class="nav-dropdown-btn" type="button" aria-expanded="false">
-          Категории
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-            <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
+      <nav class="main-nav" id="mainNav">
+        <a href="./index.html">Начало</a>
 
-        <div class="nav-dropdown-menu">
-          <div class="dropdown-col">
-            <span class="dropdown-col-title">🚜 Земекопна техника</span>
-            <a href="./category-earthmoving.html">Багери</a>
-            <a href="./category-earthmoving.html">Мини багери</a>
-            <a href="./category-earthmoving.html">Дъмпери</a>
-            <a href="./category-earthmoving.html">Валяци</a>
-          </div>
+        <div class="nav-dropdown">
+          <button
+            class="nav-dropdown-btn"
+            id="categoriesToggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="categoriesMenu"
+          >
+            <span>Категории</span>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+              <path
+                d="M2 4l4 4 4-4"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
 
-          <div class="dropdown-col">
-            <span class="dropdown-col-title">🔧 Лека механизация</span>
-            <a href="./category-page.html">Машини за рязане</a>
-            <a href="./category-page.html">Трамбовки</a>
-            <a href="./category-page.html">Къртачи</a>
-            <a href="./category-page.html">Перфоратори</a>
-          </div>
+          <div class="nav-dropdown-menu" id="categoriesMenu">
+            <div class="dropdown-col">
+              <span class="dropdown-col-title">Строителна техника</span>
+              <a href="./category-earthmoving.html" class="dropdown-link">Багери</a>
+              <a href="./category-earthmoving.html" class="dropdown-link">Мини багери</a>
+              <a href="./category-earthmoving.html" class="dropdown-link">Дъмпери</a>
+              <a href="./category-earthmoving.html" class="dropdown-link">Валяци</a>
+              <a href="./category-page.html" class="dropdown-link">Машини за рязане</a>
+              <a href="./category-page.html" class="dropdown-link">Трамбовки</a>
+            </div>
 
-          <div class="dropdown-col">
-            <span class="dropdown-col-title">⚡ Генератори</span>
-            <a href="./category-page.html">Генератори</a>
-            <a href="./category-page.html">Дизелови генератори</a>
-            <a href="./category-page.html">Компресори</a>
-            <a href="./category-page.html">Въздушни компресори</a>
-          </div>
-
-          <div class="dropdown-col">
-            <span class="dropdown-col-title">📦 Складова техника</span>
-            <a href="./category-page.html">Мотокари</a>
-            <a href="./category-page.html">Електрокари</a>
-            <a href="./category-page.html">Палетни колички</a>
-            <a href="./category-page.html">Стакери</a>
+            <div class="dropdown-col">
+              <span class="dropdown-col-title">Още категории</span>
+              <a href="./category-page.html" class="dropdown-link">Къртачи</a>
+              <a href="./category-page.html" class="dropdown-link">Перфоратори</a>
+              <a href="./category-page.html" class="dropdown-link">Генератори</a>
+              <a href="./category-page.html" class="dropdown-link">Компресори</a>
+              <a href="./category-page.html" class="dropdown-link">Мотокари</a>
+              <a href="./category-page.html" class="dropdown-link">Електрокари</a>
+            </div>
           </div>
         </div>
-      </div>
 
-      <a href="./product-page.html">Продукт</a>
-      <a href="./checkout-page.html">Checkout</a>
-      <a href="#" class="btn btn-outline-primary nav-cta-mobile">Вход / Регистрация</a>
-    </nav>
+        <a href="./product-page.html">Продукт</a>
+        <a href="./checkout-page.html">Checkout</a>
 
-    <a href="#" class="btn btn-outline-primary nav-cta">Вход / Регистрация</a>
+        <a href="#" class="btn btn-outline-primary nav-cta-mobile">Вход / Регистрация</a>
+      </nav>
+
+      <a href="#" class="btn btn-outline-primary nav-cta">Вход / Регистрация</a>
+    </div>
   </div>
 </header>
 
-<!-- MOBILE OVERLAY -->
 <div class="mobile-overlay" id="mobileOverlay"></div>
+
 <main>
+
+
 
 <!-- HERO -->
 <section class="hero hero-home">
@@ -129,14 +137,14 @@
 </section>
 <!-- END HERO -->
 
-    <!-- ✅ CATEGORIES — now correctly outside the hero -->
-  <section class="categories-preview" id="categories">
+<!-- ✅ CATEGORIES — now correctly outside the hero -->
+<section class="categories-preview" id="categories">
   <div class="container">
     <div class="section-headings">
-  <span class="eyebrow">Машини под наем</span>
-  <h2>Основни категории</h2>
-  <p>Избери техника според вида работа — от изкопни машини и лека механизация до генератори и складово оборудване.</p>
-</div>
+      <span class="eyebrow">Машини под наем</span>
+      <h2>Основни категории</h2>
+      <p>Избери техника според вида работа — от изкопни машини и лека механизация до генератори и складово оборудване.</p>
+    </div>
 
     <div class="category-grid">
       <article class="category-card rental-category-card" data-href="./category-earthmoving.html" tabindex="0" role="link" aria-label="Земекопна техника">
@@ -194,217 +202,168 @@
   </div>
 </section>
 
+<!-- ✅ END CATEGORIES -->
 
-    <!-- ✅ END CATEGORIES -->
+<section class="faq-section">
+  <div class="container faq-wrap">
+    <div class="faq-intro">
+      <span class="section-kicker">Често задавани въпроси</span>
+      <h2>Често задавани въпроси за наем на строителна техника</h2>
+      <p>
+        Събрахме най-често задаваните въпроси за наем на машини, срокове, доставка,
+        условия и организация на обекта, за да ти помогнем по-бързо да избереш
+        подходящата техника.
+      </p>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item" open>
+        <summary>Какви машини мога да наема за малък или среден обект?</summary>
+        <div class="faq-answer">
+          <p>В зависимост от вида работа можеш да наемеш мини багери, виброплочи, генератори, къртачи и друга техника, подходяща за ремонтни, дворни, инфраструктурни и строителни дейности.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary>Мога ли да наема техника за кратък период?</summary>
+        <div class="faq-answer">
+          <p>Да, предлагаме възможност за краткосрочен и дългосрочен наем според нуждите на конкретния обект и периода, за който е необходима машината.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary>Предлагате ли доставка до обекта?</summary>
+        <div class="faq-answer">
+          <p>При възможност може да се организира доставка или вземане на техниката според локацията, вида машина и конкретния график на обекта.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary>Как да избера подходящата машина за моя проект?</summary>
+        <div class="faq-answer">
+          <p>Ако не си сигурен кой модел е най-подходящ, можеш да се ориентираш по вида работа, терена, срока и натоварването, а ние можем да помогнем с насока при избора.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary>Какво се случва, ако ми трябва техниката за по-дълго?</summary>
+        <div class="faq-answer">
+          <p>При нужда от удължаване е добре да се направи предварителна заявка, за да се потвърди наличността и да се организира продължаване на периода на наем.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary>Работите ли с частни клиенти и фирми?</summary>
+        <div class="faq-answer">
+          <p>Да, услугата е подходяща както за частни клиенти и малки ремонти, така и за строителни фирми, бригади и професионални изпълнители.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
 
-    <section class="faq-section">
-      <div class="container faq-wrap">
-        <div class="faq-intro">
-          <span class="section-kicker">Често задавани въпроси</span>
-          <h2>Често задавани въпроси за наем на строителна техника</h2>
-          <p>
-            Събрахме най-често задаваните въпроси за наем на машини, срокове, доставка,
-            условия и организация на обекта, за да ти помогнем по-бързо да избереш
-            подходящата техника.
-          </p>
-        </div>
-        <div class="faq-list">
-          <details class="faq-item" open>
-            <summary>Какви машини мога да наема за малък или среден обект?</summary>
-            <div class="faq-answer">
-              <p>В зависимост от вида работа можеш да наемеш мини багери, виброплочи, генератори, къртачи и друга техника, подходяща за ремонтни, дворни, инфраструктурни и строителни дейности.</p>
-            </div>
-          </details>
-          <details class="faq-item">
-            <summary>Мога ли да наема техника за кратък период?</summary>
-            <div class="faq-answer">
-              <p>Да, предлагаме възможност за краткосрочен и дългосрочен наем според нуждите на конкретния обект и периода, за който е необходима машината.</p>
-            </div>
-          </details>
-          <details class="faq-item">
-            <summary>Предлагате ли доставка до обекта?</summary>
-            <div class="faq-answer">
-              <p>При възможност може да се организира доставка или вземане на техниката според локацията, вида машина и конкретния график на обекта.</p>
-            </div>
-          </details>
-          <details class="faq-item">
-            <summary>Как да избера подходящата машина за моя проект?</summary>
-            <div class="faq-answer">
-              <p>Ако не си сигурен кой модел е най-подходящ, можеш да се ориентираш по вида работа, терена, срока и натоварването, а ние можем да помогнем с насока при избора.</p>
-            </div>
-          </details>
-          <details class="faq-item">
-            <summary>Какво се случва, ако ми трябва техниката за по-дълго?</summary>
-            <div class="faq-answer">
-              <p>При нужда от удължаване е добре да се направи предварителна заявка, за да се потвърди наличността и да се организира продължаване на периода на наем.</p>
-            </div>
-          </details>
-          <details class="faq-item">
-            <summary>Работите ли с частни клиенти и фирми?</summary>
-            <div class="faq-answer">
-              <p>Да, услугата е подходяща както за частни клиенти и малки ремонти, така и за строителни фирми, бригади и професионални изпълнители.</p>
-            </div>
-          </details>
-        </div>
-      </div>
-    </section>
- 
-    <section class="featured-products">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">Препоръчани</span>
-          <h2>Популярни машини под наем</h2>
-        </div>
-        <div class="products-grid">
-          <article class="product-card">
-            <div class="product-thumb">Снимка</div>
-            <h3>Мини багер CAT 301.8</h3>
-            <div class="rating">★★★★★ <span>4.8</span></div>
-            <div class="price-box">
-              <span class="old-price">160 лв./ден</span>
-              <span class="new-price">129 лв./ден</span>
-            </div>
-          </article>
-          <article class="product-card">
-            <div class="product-thumb">Снимка</div>
-            <h3>Виброплоча Husqvarna</h3>
-            <div class="rating">★★★★☆ <span>4.6</span></div>
-            <div class="price-box">
-              <span class="old-price">80 лв./ден</span>
-              <span class="new-price">65 лв./ден</span>
-            </div>
-          </article>
-          <article class="product-card">
-            <div class="product-thumb">Снимка</div>
-            <h3>Къртач Bosch 16 kg</h3>
-            <div class="rating">★★★★★ <span>4.9</span></div>
-            <div class="price-box">
-              <span class="old-price">55 лв./ден</span>
-              <span class="new-price">45 лв./ден</span>
-            </div>
-          </article>
-          <article class="product-card">
-            <div class="product-thumb">Снимка</div>
-            <h3>Генератор Honda 6.5 kW</h3>
-            <div class="rating">★★★★☆ <span>4.7</span></div>
-            <div class="price-box">
-              <span class="old-price">95 лв./ден</span>
-              <span class="new-price">79 лв./ден</span>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
- 
-  </main>
- 
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <div class="footer-logo">Rental Demo</div>
-        <p>Наем на строителна техника и малка механизация за жилищни, ремонтни, инфраструктурни и професионални обекти.</p>
-        <a href="./category-page.html" class="footer-cta">Разгледай машините</a>
-      </div>
-      <div class="footer-column">
-        <h3>Навигация</h3>
-        <ul>
-          <li><a href="./index.html">Начало</a></li>
-          <li><a href="./category-page.html">Категории</a></li>
-          <li><a href="./product-page.html">Продукт</a></li>
-          <li><a href="./checkout-page.html">Checkout</a></li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <h3>Категории</h3>
-        <ul>
-          <li><a href="./category-page.html">Мини багери</a></li>
-          <li><a href="./category-page.html">Виброплочи</a></li>
-          <li><a href="./category-page.html">Генератори</a></li>
-          <li><a href="./category-page.html">Къртачи</a></li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <h3>Контакти</h3>
-        <ul class="footer-contact-list">
-          <li>Телефон: <a href="tel:+359888000000">+359 888 000 000</a></li>
-          <li>Имейл: <a href="mailto:info@rentaldemo.bg">info@rentaldemo.bg</a></li>
-          <li>Локация: Бяла Слатина, България</li>
-          <li>Работно време: Пон - Пет, 08:00 - 18:00</li>
-        </ul>
-      </div>
+<section class="featured-products">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Препоръчани</span>
+      <h2>Популярни машини под наем</h2>
     </div>
-    <div class="container footer-bottom">
-      <p>© 2026 Rental Demo. Всички права запазени.</p>
-      <div class="footer-legal">
-        <a href="#">Политика за поверителност</a>
-        <a href="#">Условия за ползване</a>
-        <a href="#">Бисквитки</a>
-      </div>
+    <div class="products-grid">
+      <article class="product-card">
+        <div class="product-thumb">Снимка</div>
+        <h3>Мини багер CAT 301.8</h3>
+        <div class="rating">★★★★★ <span>4.8</span></div>
+        <div class="price-box">
+          <span class="old-price">160 лв./ден</span>
+          <span class="new-price">129 лв./ден</span>
+        </div>
+      </article>
+      <article class="product-card">
+        <div class="product-thumb">Снимка</div>
+        <h3>Виброплоча Husqvarna</h3>
+        <div class="rating">★★★★☆ <span>4.6</span></div>
+        <div class="price-box">
+          <span class="old-price">80 лв./ден</span>
+          <span class="new-price">65 лв./ден</span>
+        </div>
+      </article>
+      <article class="product-card">
+        <div class="product-thumb">Снимка</div>
+        <h3>Къртач Bosch 16 kg</h3>
+        <div class="rating">★★★★★ <span>4.9</span></div>
+        <div class="price-box">
+          <span class="old-price">55 лв./ден</span>
+          <span class="new-price">45 лв./ден</span>
+        </div>
+      </article>
+      <article class="product-card">
+        <div class="product-thumb">Снимка</div>
+        <h3>Генератор Honda 6.5 kW</h3>
+        <div class="rating">★★★★☆ <span>4.7</span></div>
+        <div class="price-box">
+          <span class="old-price">95 лв./ден</span>
+          <span class="new-price">79 лв./ден</span>
+        </div>
+      </article>
     </div>
-  </footer>
- 
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">Rental Demo</div>
+      <p>Наем на строителна техника и малка механизация за жилищни, ремонтни, инфраструктурни и професионални обекти.</p>
+      <a href="./category-page.html" class="footer-cta">Разгледай машините</a>
+    </div>
+    <div class="footer-column">
+      <h3>Навигация</h3>
+      <ul>
+        <li><a href="./index.html">Начало</a></li>
+        <li><a href="./category-page.html">Категории</a></li>
+        <li><a href="./product-page.html">Продукт</a></li>
+        <li><a href="./checkout-page.html">Checkout</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Категории</h3>
+      <ul>
+        <li><a href="./category-page.html">Мини багери</a></li>
+        <li><a href="./category-page.html">Виброплочи</a></li>
+        <li><a href="./category-page.html">Генератори</a></li>
+        <li><a href="./category-page.html">Къртачи</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Контакти</h3>
+      <ul class="footer-contact-list">
+        <li>Телефон: <a href="tel:+359888000000">+359 888 000 000</a></li>
+        <li>Имейл: <a href="mailto:info@rentaldemo.bg">info@rentaldemo.bg</a></li>
+        <li>Локация: Бяла Слатина, България</li>
+        <li>Работно време: Пон - Пет, 08:00 - 18:00</li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>© 2026 Rental Demo. Всички права запазени.</p>
+    <div class="footer-legal">
+      <a href="#">Политика за поверителност</a>
+      <a href="#">Условия за ползване</a>
+      <a href="#">Бисквитки</a>
+    </div>
+  </div>
+</footer>
+
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const dropdownButtons = document.querySelectorAll('.nav-dropdown-btn');
+document.addEventListener('DOMContentLoaded', function () {
   const dropdowns = document.querySelectorAll('.nav-dropdown');
   const navToggle = document.getElementById('navToggle');
   const mainNav = document.getElementById('mainNav');
   const mobileOverlay = document.getElementById('mobileOverlay');
-  const siteHeader = document.querySelector('.site-header');
 
   function closeAllDropdowns() {
-    dropdowns.forEach(dropdown => {
+    dropdowns.forEach(function (dropdown) {
       dropdown.classList.remove('open');
       const btn = dropdown.querySelector('.nav-dropdown-btn');
       if (btn) btn.setAttribute('aria-expanded', 'false');
     });
   }
-
-  let dropdownJustOpened = false;
-
-  dropdownButtons.forEach(btn => {
-    btn.addEventListener('click', function (e) {
-      e.preventDefault();
-
-      const dropdown = this.closest('.nav-dropdown');
-      const isOpen = dropdown.classList.contains('open');
-
-      closeAllDropdowns();
-
-      if (!isOpen) {
-        dropdown.classList.add('open');
-        this.setAttribute('aria-expanded', 'true');
-        dropdownJustOpened = true;
-      }
-    });
-  });
-
-  // Спира затварянето при клик вътре в менюто
-  document.querySelectorAll('.nav-dropdown-menu').forEach(menu => {
-    menu.addEventListener('click', e => e.stopPropagation());
-  });
-
-  // Затваря при клик извън навигацията
-  document.addEventListener('click', e => {
-    if (dropdownJustOpened) {
-      dropdownJustOpened = false;
-      return;
-    }
-    if (!e.target.closest('.nav-dropdown')) {
-      closeAllDropdowns();
-    }
-    if (!e.target.closest('.site-header') && !e.target.closest('#mobileOverlay')) {
-      closeNav();
-    }
-  });
-
-  // Затваря при ESC
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') {
-      closeAllDropdowns();
-      closeNav();
-    }
-  });
 
   function openNav() {
     if (navToggle) {
@@ -427,70 +386,81 @@ document.addEventListener('DOMContentLoaded', () => {
     closeAllDropdowns();
   }
 
-  if (navToggle && mainNav) {
-    navToggle.addEventListener('click', e => {
+  dropdowns.forEach(function (dropdown) {
+    const btn = dropdown.querySelector('.nav-dropdown-btn');
+    if (!btn) return;
+
+    btn.addEventListener('click', function (e) {
       e.stopPropagation();
-      mainNav.classList.contains('open') ? closeNav() : openNav();
+
+      const isOpen = dropdown.classList.contains('open');
+
+      if (window.innerWidth > 768) {
+        closeAllDropdowns();
+      }
+
+      if (isOpen) {
+        dropdown.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      } else {
+        dropdown.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  if (navToggle && mainNav) {
+    navToggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+
+      if (mainNav.classList.contains('open')) {
+        closeNav();
+      } else {
+        openNav();
+      }
     });
   }
 
   if (mobileOverlay) {
-    mobileOverlay.addEventListener('click', closeNav);
-  }
-
-  document.querySelectorAll('.main-nav a').forEach(link => {
-    link.addEventListener('click', () => {
-      if (window.innerWidth <= 768) closeNav();
+    mobileOverlay.addEventListener('click', function () {
+      closeNav();
     });
-  });
-
-  let lastScrollY = window.scrollY;
-
-  function resetDesktopHeaderState() {
-    if (!siteHeader) return;
-    siteHeader.classList.remove('at-top', 'scrolled', 'hide-on-scroll');
   }
 
-  function handleMobileHeaderScroll() {
-    if (!siteHeader) return;
-
-    if (window.innerWidth > 768) {
-      resetDesktopHeaderState();
-      return;
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.nav-dropdown')) {
+      closeAllDropdowns();
     }
 
-    const currentScrollY = window.scrollY;
-
-    if (currentScrollY <= 8) {
-      siteHeader.classList.add('at-top');
-      siteHeader.classList.remove('scrolled', 'hide-on-scroll');
-      lastScrollY = currentScrollY;
-      return;
-    }
-
-    siteHeader.classList.remove('at-top');
-    siteHeader.classList.add('scrolled');
-
-    if (currentScrollY > lastScrollY && currentScrollY > 80) {
-      siteHeader.classList.add('hide-on-scroll');
-    } else {
-      siteHeader.classList.remove('hide-on-scroll');
-    }
-
-    lastScrollY = currentScrollY;
-  }
-
-  window.addEventListener('scroll', handleMobileHeaderScroll, { passive: true });
-
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 768) {
+    if (
+      mainNav &&
+      mainNav.classList.contains('open') &&
+      !e.target.closest('#mainNav') &&
+      !e.target.closest('#navToggle')
+    ) {
       closeNav();
     }
-    closeAllDropdowns();
-    handleMobileHeaderScroll();
   });
 
-  handleMobileHeaderScroll();
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      closeNav();
+    }
+  });
+
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 768) {
+      if (mainNav) mainNav.classList.remove('open');
+      if (navToggle) {
+        navToggle.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
+      if (mobileOverlay) mobileOverlay.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  });
 });
 </script>
 
+</body>
+</html>
