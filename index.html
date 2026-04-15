@@ -360,7 +360,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  dropdownButtons.forEach(btn => {
+dropdownButtons.forEach(btn => {
     btn.addEventListener('click', function (e) {
       e.preventDefault();
       e.stopPropagation();
@@ -374,8 +374,9 @@ document.addEventListener('DOMContentLoaded', () => {
         dropdown.classList.add('open');
         this.setAttribute('aria-expanded', 'true');
       }
-    });
+    }, true);   // ← само това се добавя: ", true"
   });
+
 
   // Спира затварянето при клик вътре в менюто
   document.querySelectorAll('.nav-dropdown-menu').forEach(menu => {
