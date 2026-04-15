@@ -405,15 +405,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
       const isOpen = dropdown.classList.contains('open');
 
-      // 👉 ВИНАГИ затваряме другите dropdown-и (важно за mobile)
-      closeAllDropdowns();
+      if (window.innerWidth > 768) {
+        closeAllDropdowns();
+      }
 
-      if (!isOpen) {
-        dropdown.classList.add('open');
-        btn.setAttribute('aria-expanded', 'true');
-      } else {
+      if (isOpen) {
         dropdown.classList.remove('open');
         btn.setAttribute('aria-expanded', 'false');
+      } else {
+        dropdown.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
       }
     });
   });
@@ -466,8 +467,10 @@ document.addEventListener('DOMContentLoaded', function () {
       }
       if (mobileOverlay) mobileOverlay.classList.remove('open');
       document.body.style.overflow = '';
-      closeAllDropdowns();
     }
   });
 });
 </script>
+
+</body>
+</html>
