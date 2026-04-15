@@ -867,14 +867,12 @@ HEADER + NAVIGATION
 
   /* ── Header wrapper ── */
   .site-header {
-    position: sticky;
+    position: absolute;
     top: 0;
-    z-index: 300;
-    padding: 8px 12px;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
     background: transparent;
-    border-bottom: none;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
   }
 
   /* ── Header pill ── */
@@ -958,8 +956,11 @@ HEADER + NAVIGATION
     border-radius: 0 !important;
   }
 
-  .main-nav.open { left: 0 !important; }
+  .main-nav.open {
+    left: 0 !important;
+  }
 
+  /* ── Links ── */
   .main-nav > a {
     padding: 13px 14px !important;
     border-radius: 10px !important;
@@ -972,8 +973,11 @@ HEADER + NAVIGATION
     background: none !important;
   }
 
-  .main-nav > a:hover { background: #fef3c7 !important; }
+  .main-nav > a:hover {
+    background: #fef3c7 !important;
+  }
 
+  /* ── Dropdown button ── */
   .nav-dropdown-btn {
     padding: 13px 14px !important;
     border-radius: 10px !important;
@@ -981,37 +985,55 @@ HEADER + NAVIGATION
     width: 100% !important;
     text-align: left !important;
     min-height: 50px !important;
+    display: flex !important;
+    align-items: center !important;
     justify-content: space-between !important;
+    background: none !important;
+    border: none !important;
   }
 
+  /* ── Dropdown menu ── */
   .nav-dropdown-menu {
+    display: none;
     position: static !important;
     transform: none !important;
     box-shadow: none !important;
     border: 1px solid var(--border) !important;
     border-radius: 10px !important;
     padding: 8px !important;
-    min-width: unset !important;
     width: 100% !important;
     margin-top: 4px !important;
-    grid-template-columns: 1fr !important;
-    gap: 0 !important;
     background: #fafafa !important;
-    backdrop-filter: none !important;
   }
 
-  .nav-dropdown.open .nav-dropdown-menu { display: grid !important; }
+  .nav-dropdown.open .nav-dropdown-menu {
+    display: block !important;
+  }
 
+  /* ── Dropdown content ── */
   .dropdown-col {
-    border-right: none !important;
     border-bottom: 1px solid var(--border) !important;
     padding: 8px !important;
   }
 
-  .dropdown-col:last-child { border-bottom: none !important; }
-  .dropdown-col-title { font-size: 0.7rem !important; white-space: normal !important; margin-bottom: 6px !important; }
-  .dropdown-col a { padding: 8px 6px !important; border-radius: 8px !important; min-height: 40px !important; display: flex !important; align-items: center !important; white-space: normal !important; }
+  .dropdown-col:last-child {
+    border-bottom: none !important;
+  }
 
+  .dropdown-col-title {
+    font-size: 0.7rem !important;
+    margin-bottom: 6px !important;
+  }
+
+  .dropdown-col a {
+    padding: 8px 6px !important;
+    border-radius: 8px !important;
+    min-height: 40px !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  /* ── Mobile CTA ── */
   .nav-cta-mobile {
     display: flex !important;
     margin-top: 16px !important;
@@ -1022,12 +1044,31 @@ HEADER + NAVIGATION
   }
 
   /* ── Hero ── */
-  .hero-home { min-height: auto; background-position: center center; }
-  .hero-home-content { padding: 80px 0 60px; }
-  .hero-search-bar { grid-template-columns: 1fr; width: 100%; border-radius: 16px; }
-  .hero-search-item { min-height: 60px; padding: 10px 16px; border-left: none; border-right: none; border-bottom: 1px solid #ece7df; }
-  .hero-search-item:nth-child(2n) { border-left: none; }
-  .hero-search-btn { grid-column: auto; min-height: 58px; border-radius: 0 0 16px 16px; }
+  .hero-home {
+    min-height: auto;
+    background-position: center center;
+  }
+
+  .hero-home-content {
+    padding: 80px 0 60px;
+  }
+
+  .hero-search-bar {
+    grid-template-columns: 1fr;
+    width: 100%;
+    border-radius: 16px;
+  }
+
+  .hero-search-item {
+    min-height: 60px;
+    padding: 10px 16px;
+    border-bottom: 1px solid #ece7df;
+  }
+
+  .hero-search-btn {
+    min-height: 58px;
+    border-radius: 0 0 16px 16px;
+  }
 
   /* ── Product & Checkout ── */
   .product-thumb { height: 200px; }
