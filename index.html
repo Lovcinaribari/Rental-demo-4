@@ -400,23 +400,20 @@ document.addEventListener('DOMContentLoaded', function () {
     const btn = dropdown.querySelector('.nav-dropdown-btn');
     if (!btn) return;
 
-    btn.addEventListener('click', function (e) {
-      e.stopPropagation();
+  btn.addEventListener('click', function (e) {
+  e.preventDefault();
+  e.stopPropagation();
 
-      const isOpen = dropdown.classList.contains('open');
+  const isOpen = dropdown.classList.contains('open');
 
-      if (window.innerWidth > 768) {
-        closeAllDropdowns();
-      }
+  // винаги затваряме всички dropdown-и
+  closeAllDropdowns();
 
-      if (isOpen) {
-        dropdown.classList.remove('open');
-        btn.setAttribute('aria-expanded', 'false');
-      } else {
-        dropdown.classList.add('open');
-        btn.setAttribute('aria-expanded', 'true');
-      }
-    });
+  if (!isOpen) {
+    dropdown.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
+  }
+});
   });
 
   if (navToggle && mainNav) {
